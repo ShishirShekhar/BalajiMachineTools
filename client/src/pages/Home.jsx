@@ -24,7 +24,6 @@ const Home = () => {
         />
       <About />
       <Gallery />
-      <Contact />
     </div>
   );
 };
