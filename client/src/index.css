@@ -13,7 +13,7 @@ html {
 }
 
 .featured-product {
-  @apply w-48 h-48 shadow-xl rounded-xl relative overflow-hidden;
+  @apply w-64 h-64 shadow-xl rounded-xl relative overflow-hidden;
 }
 
 .featured-product img {
@@ -21,7 +21,7 @@ html {
 }
 
 .featured-product .overlay {
-  @apply absolute -bottom-48 w-full h-full transition-all bg-blue-500;
+  @apply absolute -bottom-64 w-full h-full transition-all bg-blue-500 bg-opacity-90;
   transition: .5s ease;
 }
 
@@ -30,7 +30,7 @@ html {
 }
 
 .featured-product .text {
-  @apply text-lg text-center absolute top-1/2 left-1/2 text-white;
+  @apply text-lg text-center absolute top-1/2 left-1/2 text-white w-full px-4 font-bold;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
