@@ -11,3 +11,27 @@ html {
     url("./images/hero.jpeg");
   background-size: cover;
 }
+
+.featured-product {
+  @apply w-48 h-48 shadow-xl rounded-xl relative overflow-hidden;
+}
+
+.featured-product img {
+  @apply absolute p-4;
+}
+
+.featured-product .overlay {
+  @apply absolute -bottom-48 w-full h-full transition-all bg-blue-500;
+  transition: .5s ease;
+}
+
+.featured-product:hover .overlay {
+  @apply bottom-0;
+}
+
+.featured-product .text {
+  @apply text-lg text-center absolute top-1/2 left-1/2 text-white;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
