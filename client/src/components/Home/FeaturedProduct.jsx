@@ -6,7 +6,11 @@ const FeaturedProduct = (props) => {
         {props.products.map((product, index) => {
           return (
             <div className="featured-product" key={index + product.name}>
-              <img src={product.img} alt={product.name} />
+              <img
+                src={product.img}
+                alt={product.name}
+                className="w-full h-full"
+              />
               <div className="overlay">
                 <p className="text">{product.name}</p>
               </div>
