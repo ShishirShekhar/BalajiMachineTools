@@ -32,16 +32,16 @@ const About = () => {
           </div>
 
           <div className="py-2">
-            <h2 className="text-2xl font-semibold">Infrastructure</h2>
+            <h2 className="text-2xl font-semibold">Teams</h2>
             <p className="text-justify">
-              Achieving highest standards in industrial machines is possible
-              only when a company maintains its production unit in line with the
-              cutting-edge technology. In order to supply simply the best
-              industrial machines, we have built our advanced and robust
-              production unit, in complete accordance to the industrial norms.
-              With basic available resources, we are producing advanced
-              machines. We have special quality inspection and R&D departments
-              to maintain efficiency and quality of our machines.
+              Sach Khand Machine Tools is innovating better technology
+              industrial machines and winning clients trust with the support of
+              100 strong-willed and industry knowledge possessing experts. We
+              are proud and happy to have with us all hardworking technicians,
+              engineers, designers, quality inspectors, logistic personnel,
+              sales agents and more to support our growth and industrial
+              operations. It is their dedication to work better on every project
+              that we receive only praises and no complaints from customers.
             </p>
           </div>
         </div>
