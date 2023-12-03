@@ -8,9 +8,16 @@ const Nav = () => {
         <p>
           <a href="#home">Home</a>
         </p>
-        <p>
-          <a href="#popular">Our Products</a>
-        </p>
+        <div className="relative group">
+          <p>Our Product</p>
+          <div className="absolute -top-56 group-hover:top-12 transition-all bg-black bg-opacity-50 w-full">
+            <p className="p-2 border-b-2 border-black text-white">Hello</p>
+            <p className="p-2 border-b-2 border-black text-white">Hello</p>
+            <p className="p-2 border-b-2 border-black text-white">Hello</p>
+            <p className="p-2 border-b-2 border-black text-white">Hello</p>
+            <p className="p-2 border-b-2 border-black text-white">Hello</p>
+          </div>
+        </div>
         <p>
           <a href="#about">About Us</a>
         </p>
