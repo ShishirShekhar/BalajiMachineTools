@@ -57,7 +57,15 @@ export const featuredProducts = [
 
 export const products = [
   {
+    id: "123",
+    name: "C Type Power Press Machine ",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis consequuntur expedita beatae. Id totam maxime soluta debitis culpa cumque provident officiis rem dolor sapiente quaerat odio quod, assumenda sit nisi vel perspiciatis. Eligendi minus rem molestiae placeat, blanditiis numquam deleniti totam vitae dolorum eos, error voluptas fuga quidem impedit? Voluptate veritatis harum delectus at commodi optio reprehenderit! Expedita soluta veniam nemo incidunt porro! Dolorum harum sunt perspiciatis blanditiis nisi, alias dicta quidem molestias quis dignissimos saepe voluptates nesciunt libero ullam earum quisquam assumenda, facere in odio quod hic ipsum illo? Magni officia facere excepturi porro labore quasi voluptate reiciendis minima?",
     img: "https://static.connect2india.com/c2icd/company_resources/1035057/images/products/product-extra-heavy-duty-roll-turning-lathe-machine.jpg",
+    stars: 3,
+    ratings: 4,
+    minPrice: 500000,
+    maxPrice: 5000000,
   },
   {
     img: "https://www.tradeindia.com/_next/image/?url=https%3A%2F%2Fcpimg.tistatic.com%2F05629471%2Fb%2F4%2FHeavy-Duty-Lathe-Machine.jpg&w=750&q=75",

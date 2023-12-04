@@ -39,3 +39,7 @@ html {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+.transition {
+  transition: .5s ease;
+}
