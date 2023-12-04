@@ -4,7 +4,9 @@ import logo from "../../images/logo.png";
 const Nav = () => {
   return (
     <div className="bg-black bg-opacity-50 px-10 py-4 text-white flex justify-between items-center w-full z-10">
-      <img src={logo} alt="logo" className="w-10" />
+      <Link to="/">
+        <img src={logo} alt="logo" className="w-10" />
+      </Link>
       <div className="flex justify-evenly w-2/3">
         <p>
           <Link to="/">Home</Link>
