@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 
 const Nav = () => {
@@ -6,7 +7,7 @@ const Nav = () => {
       <img src={logo} alt="logo" className="w-10" />
       <div className="flex justify-evenly w-2/3">
         <p>
-          <a href="#home">Home</a>
+          <Link to="/">Home</Link>
         </p>
         <div className="relative group">
           <p>Our Product</p>
