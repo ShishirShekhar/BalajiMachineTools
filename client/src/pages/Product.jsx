@@ -7,7 +7,7 @@ import { products } from "../constants/products";
 const Product = () => {
   const { id } = useParams();
   const product = products.find((product) => product.id === id);
-  let message = `Hello, I'm interested in ${product.name}`;
+  let message = `Hello, I visited this website https://smtlathemachine.vercel.app/ , and I would like to know more about ${product.name}`;
   message = message.replace(/ /g, "%20");
 
   return (
