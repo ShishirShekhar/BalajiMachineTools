@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const FeaturedProduct = (props) => {
   return (
     <div className="py-10 px-10 text-4xl featured-products">
@@ -5,16 +7,18 @@ const FeaturedProduct = (props) => {
       <div className="flex justify-around py-10">
         {props.products.map((product, index) => {
           return (
-            <div className="featured-product" key={index + product.name}>
-              <img
-                src={product.img}
-                alt={product.name}
-                className="w-full h-full"
-              />
-              <div className="overlay">
-                <p className="text">{product.name}</p>
+            <Link to={`/product/${product.id}`}>
+              <div className="featured-product" key={index + product.name}>
+                <img
+                  src={product.img}
+                  alt={product.name}
+                  className="w-full h-full"
+                />
+                <div className="overlay">
+                  <p className="text">{product.name}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

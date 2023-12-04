@@ -1,5 +1,6 @@
 import React from "react";
 import { products } from "../../constants/products";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
   return (
@@ -8,9 +9,15 @@ const Gallery = () => {
       <div className="flex flex-wrap justify-evenly">
         {products.map((product) => {
           return (
-            <div className="shadow-xl rounded-xl p-4" key={product.img}>
-              <img src={product.img} alt={product.name} className="w-72 h-72 p-2 hover:p-0 transition-all" />
-            </div>
+            <Link to={`/product/${product.id}`}>
+              <div className="shadow-xl rounded-xl p-4" key={product.img}>
+                <img
+                  src={product.img}
+                  alt={product.name}
+                  className="w-72 h-72 p-2 hover:p-0 transition-all"
+                />
+              </div>
+            </Link>
           );
         })}
       </div>
