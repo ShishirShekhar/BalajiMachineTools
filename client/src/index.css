@@ -43,3 +43,7 @@ html {
 .transition {
   transition: .5s ease;
 }
+
+.hamburger-option {
+  padding: 1.5rem;
+}
