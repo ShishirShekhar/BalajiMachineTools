@@ -7,7 +7,7 @@ const Nav = () => {
       <Link to="/">
         <img src={logo} alt="logo" className="w-10" />
       </Link>
-      <div className="flex justify-evenly w-2/3">
+      <div className="flex justify-evenly w-2/3 md:hidden">
         <p>
           <a href="#home">Home</a>
         </p>
@@ -23,6 +23,9 @@ const Nav = () => {
         <p>
           <a href="#contact">Contact Us</a>
         </p>
+      </div>
+      <div>
+        
       </div>
     </div>
   );
