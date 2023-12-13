@@ -34,10 +34,14 @@ const Nav = () => {
         </p>
       </div>
       <button className="text-xl md:hidden" onClick={switchMenu}>
-        {menu ? <RiCloseFill /> : <RxHamburgerMenu />}
+        {menu ? <RiCloseFill onClick={switchMenu} /> : <RxHamburgerMenu />}
       </button>
       {menu && (
         <div className="absolute bg-black bg-opacity-75 w-screen h-screen top-0 left-0 flex flex-col justify-center items-center text-3xl font-bold">
+          <RiCloseFill
+            className="absolute top-5 right-10"
+            onClick={switchMenu}
+          />
           <p className="hamburger-option">
             <a href="#home">Home</a>
           </p>
