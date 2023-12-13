@@ -2,7 +2,7 @@ const About = () => {
   return (
     <div className="px-10 py-10" id="about">
       <h1 className="text-4xl font-semibold py-10 text-center">About Us</h1>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between items-center">
         <img
           src="https://image3.jdomni.in/banner/29092021/2D/2D/9B/25E2078FE03DBDFD813944DD36_1632910558314.png?output-format=webp"
           alt="machine tools"
