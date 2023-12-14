@@ -1,4 +1,5 @@
 import { RiStarSLine, RiStarSFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
   const product = props.product;
@@ -31,9 +32,11 @@ const ProductCard = (props) => {
         <p>-</p>
         <p>₹{product.maxPrice || 0}</p>
       </div>
-      <button className="bg-yellow-500 rounded w-full h-10 hover:text-xl transition">
-        Buy Now
-      </button>
+      <Link to={`/products/${product.id}`}>
+        <button className="bg-yellow-500 rounded w-full h-10 hover:text-xl transition">
+          Buy Now
+        </button>
+      </Link>
     </div>
   );
 };
