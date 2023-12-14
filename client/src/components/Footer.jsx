@@ -41,16 +41,16 @@ const Footer = () => {
         <div>
           <h1 className="text-2xl">Useful Links</h1>
           <div className="py-2 flex flex-col justify-evenly h-44">
-            <Link to="/">
+            <Link to="/privacy">
               <p>Privacy Policy</p>
             </Link>
-            <Link to="/">
+            <Link to="/products">
               <p>Products</p>
             </Link>
-            <Link to="/">
+            <Link to="/#about">
               <p>About Us</p>
             </Link>
-            <Link to="/">
+            <Link to="/#footer">
               <p>Contact Us</p>
             </Link>
           </div>
