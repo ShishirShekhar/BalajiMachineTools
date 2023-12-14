@@ -8,7 +8,7 @@ const FeaturedProduct = (props) => {
         {props.products.map((product, index) => {
           return (
             <Link to={`/products/${product.id}`}>
-              <div className="featured-product" key={index + product.name}>
+              <div className="featured-product" key={product.id}>
                 <img
                   src={product.img}
                   alt={product.name}
