@@ -92,7 +92,7 @@ const Product = () => {
                       <th
                         className="text-md px-6 py-3 text-center"
                         key={items[0]}
-                        style={{ minWidth: "12rem" }}
+                        style={{ minWidth: "10rem" }}
                       >
                         {items[0]}
                       </th>
@@ -101,7 +101,7 @@ const Product = () => {
                 </thead>
                 <tbody>
                   {Object.values(product?.specifications)[0].map((_, index) => (
-                    <tr>
+                    <tr key={index}>
                       {Object.entries(product?.specifications).map((items) => (
                         <td className="text-md px-6 py-1 text-center">
                           {items[1][index]}
