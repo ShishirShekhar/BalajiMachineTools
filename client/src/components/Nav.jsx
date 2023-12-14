@@ -35,7 +35,7 @@ const Nav = () => {
           <a href="#gallery">Gallery</a>
         </p>
         <p>
-          <a href="#contact">Contact Us</a>
+          <a href="#footer">Contact Us</a>
         </p>
       </div>
       <button className="text-xl md:hidden" onClick={switchMenu}>

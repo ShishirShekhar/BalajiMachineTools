@@ -8,7 +8,7 @@ import whatsapp from "../images/whatsapp.png";
 
 const Footer = () => {
   return (
-    <div className="py-4 bg-blue-500 text-white flex flex-col md:flex-row justify-evenly items-center">
+    <div id="footer" className="py-4 bg-blue-500 text-white flex flex-col md:flex-row justify-evenly items-center">
       <div className="flex flex-wrap justify-evenly items-center w-full py-5 md:py-0 md:w-1/2">
         <div>
           <img src={logo} alt="logo" className="w-48" />
