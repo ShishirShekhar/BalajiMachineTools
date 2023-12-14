@@ -9,9 +9,9 @@ const Product = () => {
   message = message.replace(/ /g, "%20");
 
   return (
-    <div className="h-screen">
-      <div className="py-10 px-10 flex h-5/6">
-        <div className="rounded-xl h-full w-1/2 shadow-xl">
+    <div className="min-h-screen">
+      <div className="py-10 px-10 flex flex-col md:flex-row">
+        <div className="rounded-xl h-full md:w-1/2 shadow-xl">
           <img
             src={product.img}
             alt={product.name}
@@ -20,28 +20,28 @@ const Product = () => {
           />
         </div>
 
-        <div className="flex flex-col px-10 w-1/2 justify-evenly">
+        <div className="flex flex-col gap-5 py-5 md:py-0 md:px-10 md:w-1/2 justify-evenly">
           <div>
             <Link to={"/"}>
               <p className=" text-blue-500">More products</p>
             </Link>
-            <h1 className="text-4xl p-0">{product.name}</h1>
-            <div className="flex py-2 items-center text-yellow-500">
-              <span className="pr-2">{product.stars}.0</span>
-              {Array.from({ length: 5 }, (element, index) => {
-                return (
-                  <span key={index} className=" text-xl">
-                    {index + 1 > product.stars ? (
-                      <RiStarSLine />
-                    ) : (
-                      <RiStarSFill />
-                    )}
-                  </span>
-                );
-              })}
-              <span className="px-4 text-blue-500">
-                {product.ratings} ratings
-              </span>
+            <h1 className="text-4xl">{product.name}</h1>
+            <div className="flex flex-wrap py-2 items-center">
+              <div className="flex text-yellow-500 items-center pr-4">
+                <span className="pr-2">{product.stars}.0</span>
+                {Array.from({ length: 5 }, (element, index) => {
+                  return (
+                    <span key={index} className=" text-xl">
+                      {index + 1 > product.stars ? (
+                        <RiStarSLine />
+                      ) : (
+                        <RiStarSFill />
+                      )}
+                    </span>
+                  );
+                })}
+              </div>
+              <span className="text-blue-500">{product.ratings} ratings</span>
             </div>
             <div className="h-0.5 bg-gray-400" />
           </div>
