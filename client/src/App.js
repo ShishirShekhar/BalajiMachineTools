@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import ProductDesc from "./pages/ProductDesc";
 import Products from "./pages/Products";
 import Footer from "./components/Footer";
-import Nav from "./components/Home/Nav";
+import Nav from "./components/Nav";
 
 function App() {
   return (

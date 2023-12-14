@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiCloseFill } from "react-icons/ri";
-import logo from "../../images/logo.png";
+import logo from "../images/logo.png";
 
 const Nav = () => {
   const [menu, setMenu] = useState(false);
