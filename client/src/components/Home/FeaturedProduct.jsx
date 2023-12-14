@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const FeaturedProduct = (props) => {
   return (
@@ -7,7 +7,7 @@ const FeaturedProduct = (props) => {
       <div className="flex flex-wrap gap-5 justify-around py-10">
         {props.products.map((product, index) => {
           return (
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/products/${product.id}`}>
               <div className="featured-product" key={index + product.name}>
                 <img
                   src={product.img}

@@ -9,7 +9,7 @@ const Gallery = () => {
       <div className="flex flex-wrap justify-evenly">
         {products.map((product) => {
           return (
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/products/${product.id}`}>
               <div className="shadow-xl rounded-xl p-4" key={product.img}>
                 <img
                   src={product.img}
