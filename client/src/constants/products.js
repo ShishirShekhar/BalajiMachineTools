@@ -534,6 +534,24 @@ export const products = [
   },
 ];
 
+export const categories = [
+  "Lathe Machine",
+  "Shaper",
+  "Radial Drilling Machine",
+  "Planners",
+  "Slotting Machine",
+  "Milling Machine",
+  "Power Press",
+  "Boring Machine",
+  "Sheet Bending Machine",
+  "Shearing Machine",
+  "Hydraulic Hexa Machine",
+  "Grinder",
+  "Metal Cutting Machine",
+  "Wood Working Machine",
+  "Landis/Pipe Threading Machine",
+];
+
 export const popularProducts = [
   products[0],
   products[1],
