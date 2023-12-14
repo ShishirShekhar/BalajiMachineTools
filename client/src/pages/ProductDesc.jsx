@@ -9,9 +9,9 @@ const Product = () => {
   message = message.replace(/ /g, "%20");
 
   return (
-    <div className="min-h-screen">
-      <div className="py-10 px-10 flex flex-col md:flex-row">
-        <div className="rounded-xl h-full md:w-1/2 shadow-xl">
+    <div className="min-h-screen py-10 px-10 ">
+      <div className="flex flex-col md:flex-row">
+        <div className="rounded-xl md:w-1/2 shadow-xl">
           <img
             src={product.img}
             alt={product.name}
@@ -65,6 +65,36 @@ const Product = () => {
             </button>
           </a>
         </div>
+      </div>
+
+      <div className="py-5 pt-10 overflow-scroll">
+        <h1 className="text-2xl pb-2">Technical Specification:</h1>
+        <table className="table-auto">
+          <thead>
+            <tr className="border border-x-0">
+              {Object.entries(product.specifications).map((items) => (
+                <th
+                  className="text-md px-6 py-3 text-center"
+                  key={items[0]}
+                  style={{ minWidth: "12rem" }}
+                >
+                  {items[0]}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {Object.values(product.specifications)[0].map((_, index) => (
+              <tr>
+                {Object.entries(product.specifications).map((items) => (
+                  <td className="text-md px-6 py-1 text-center">
+                    {items[1][index]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
