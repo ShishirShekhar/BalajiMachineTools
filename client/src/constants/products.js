@@ -1,7 +1,7 @@
 export const products = [
   {
     id: "1",
-    category: "Lathe",
+    category: "Lathe Machine",
     name: "Conpulley/V-Belt Lathe Machine",
     description:
       "We are the prominent manufacturer and supplier of a wide range of Conpulley / V Belt Type Lathe Machine. These heavy duty lathe machines are designed using high grade required material and advanced technology. Our offered lathe machines are examined by our professionals on industry developed parameters. Heavy duty lathe machines offered by us are also treasured by our clients for their countless quality aspects.",
@@ -48,7 +48,7 @@ export const products = [
   },
   {
     id: "2",
-    category: "Lathe",
+    category: "Lathe Machine",
     name: "All Geared Machine",
     description:
       "In order to provide the finest All Geared Machine to our clients, we engage in the utilization of the highest grade of raw materials and modern machines, as per the set industry norms and guidelines. Because of this, the product's performance, precision, strength and service life is widely acclaimed and asked for. In addition, the offered range is known to be marked at the most reasonable rate possible.",
@@ -95,7 +95,7 @@ export const products = [
   },
   {
     id: "3",
-    category: "Lathe",
+    category: "Lathe Machine",
     name: "Roller Regrooving Lathe Machine",
     description:
       "The Roller Regrooving Lathe Machine manufactured by 'Nav Ashu Machine Tools' is widely used in sugar mill, rolling mill, paper mill, rubber rolls etc.",
@@ -142,7 +142,7 @@ export const products = [
   },
   {
     id: "4",
-    category: "Lathe",
+    category: "Lathe Machine",
     name: "Roll Turning Lathe Machine",
     description:
       "As part of our range of lathe machines, we present world class Roll Turning Lathe Machines which are made from best quality materials that offer strength and durability to them. The Roll Turning Lathe Machines provided by us are widely used for proof and finish machining in rolling mills, cement plants, paper plants and heavy industries. The Roll Turning Lather machines offered by us are facilitated with power drives that enable carbide tipped tools to be used to their full capacity. Along with that, our roll turning lathe machines are provided with several carriages and special steady rests that allow matting rolls to be set up. The user friendly design of this machine has listed us among the well known roll turning lathe machine manufacturers and suppliers based in Punjab.",
@@ -189,7 +189,7 @@ export const products = [
   },
   {
     id: "5",
-    category: "Lathe",
+    category: "Lathe Machine",
     name: "Facing Lathe",
     description:
       "The Facing Lathe is suitable for high-speed steel, hard alloy and ceramic cutting tool, machining inner and outer cylindrical surface, inner and outer conical surface, groove and plane of ferrous metals,nonferrous metals and some non-metallic parts. The Facing Lathe Machine is widely used in forging unit. It can meet different quantity production requirements with high efficiency, stable and reliable precision.",
@@ -236,7 +236,7 @@ export const products = [
   },
   {
     id: "6",
-    category: "Lathe",
+    category: "Lathe Machine",
     name: "Center Lathe",
     description:
       "We are a leading manufacturer and supplier of Center Lathe machine. We are known of our quality and industry leading prices. We also supply spare parts and service for the same.",
@@ -283,7 +283,7 @@ export const products = [
   },
   {
     id: "7",
-    category: "Lathe",
+    category: "Lathe Machine",
     name: "Extra Heavy Duty Lathe Machine",
     description:
       "We are a leading manufacturer of heavy duty lathe machine in India. our heavy duty lathe machines are fabricated using quality raw material to ensure high tensile strength, high efficiency and longer service life. Heavy duty lathe machines are widely used in engineering industry, these heavy duty lathe machine are quality tested on well-defined parameters before being delivered to our clients. We manufacture heavy duty lathe machines and lathe machine parts,accessories as per your dimension and requirements.",
@@ -330,7 +330,7 @@ export const products = [
   },
   {
     id: "8",
-    category: "Lathe",
+    category: "Lathe Machine",
     name: "Vertical Turning Lathe (VTL)",
     description:
       "We are a leading manufacturer of Vertical Turning Lathe Machine in india. We manufacturer and export all kind of vertical turning lathe machines, which is manufactured using premium quality raw material. The range offered by us includes cnc vertical turning lathe machine, vertical vtl lathe machiness, and engine vertical lathe machines. These machines are designed and developed for very tight tolerances and are known for their robust construction, compact size and simplicity. Available with us are manual vertical lathe machines and cnc vertical turning lathe machines, ranging from cnc vtl. To suit the varied needs of our clients, we provide them all types of vertical turning machine such as horizontal turning machine, vertical turning machine",
