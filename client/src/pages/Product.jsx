@@ -48,7 +48,7 @@ const Product = () => {
 
           <div>
             <h2 className="text-xl">About Machine</h2>
-            <p className=" h-64">{product.description}</p>
+            <p className=" max-h-64 overflow-scroll">{product.description}</p>
           </div>
           <div>
             <h2 className="text-xl">Price Range</h2>
