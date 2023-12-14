@@ -43,19 +43,19 @@ const Nav = () => {
             onClick={switchMenu}
           />
           <p className="hamburger-option" onClick={switchMenu}>
-            <a href="#home">Home</a>
+            <a href="/#home">Home</a>
           </p>
           <p className="hamburger-option" onClick={switchMenu}>
             <Link to="/product">Our Products</Link>
           </p>
           <p className="hamburger-option" onClick={switchMenu}>
-            <a href="#about">About Us</a>
+            <a href="/#about">About Us</a>
           </p>
           <p className="hamburger-option" onClick={switchMenu}>
-            <a href="#gallery">Gallery</a>
+            <a href="/#gallery">Gallery</a>
           </p>
           <p className="hamburger-option" onClick={switchMenu}>
-            <a href="#contact">Contact Us</a>
+            <a href="/#footer">Contact Us</a>
           </p>
         </div>
       )}
