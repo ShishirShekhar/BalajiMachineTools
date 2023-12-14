@@ -26,7 +26,7 @@ const Nav = () => {
           <a href="#home">Home</a>
         </p>
         <p>
-          <Link to="/product">Our Products</Link>
+          <Link to="/products">Our Products</Link>
         </p>
         <p>
           <a href="#about">About Us</a>
@@ -51,7 +51,7 @@ const Nav = () => {
             <a href="/#home">Home</a>
           </p>
           <p className="hamburger-option" onClick={switchMenu}>
-            <Link to="/product">Our Products</Link>
+            <Link to="/products">Our Products</Link>
           </p>
           <p className="hamburger-option" onClick={switchMenu}>
             <a href="/#about">About Us</a>
