@@ -120,7 +120,9 @@ const Products = () => {
           </div>
           <div className="flex flex-wrap justify-evenly gap-10 py-10">
             {searchProducts.map((product) => (
-              <ProductCard product={product} key={product.id} />
+              <div className="px-4 md:px-0 w-full md:w-64">
+                <ProductCard product={product} key={product.id} />
+              </div>
             ))}
           </div>
         </div>
