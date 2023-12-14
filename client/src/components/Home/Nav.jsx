@@ -42,19 +42,19 @@ const Nav = () => {
             className="absolute top-5 right-10"
             onClick={switchMenu}
           />
-          <p className="hamburger-option">
+          <p className="hamburger-option" onClick={switchMenu}>
             <a href="#home">Home</a>
           </p>
-          <p className="hamburger-option">
+          <p className="hamburger-option" onClick={switchMenu}>
             <Link to="/product">Our Products</Link>
           </p>
-          <p className="hamburger-option">
+          <p className="hamburger-option" onClick={switchMenu}>
             <a href="#about">About Us</a>
           </p>
-          <p className="hamburger-option">
+          <p className="hamburger-option" onClick={switchMenu}>
             <a href="#gallery">Gallery</a>
           </p>
-          <p className="hamburger-option">
+          <p className="hamburger-option" onClick={switchMenu}>
             <a href="#contact">Contact Us</a>
           </p>
         </div>
