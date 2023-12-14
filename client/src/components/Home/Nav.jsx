@@ -1,18 +1,23 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiCloseFill } from "react-icons/ri";
 import logo from "../../images/logo.png";
 
 const Nav = () => {
   const [menu, setMenu] = useState(false);
+  const location = useLocation();
 
   const switchMenu = () => {
     setMenu((prev) => !prev);
-  }
+  };
 
   return (
-    <div className="bg-black bg-opacity-50 px-10 py-4 text-white flex justify-between items-center w-full fixed z-10">
+    <div
+      className={`bg-black bg-opacity-50 px-10 py-4 text-white flex justify-between items-center w-full ${
+        location.pathname === "/" ? "fixed" : ""
+      } z-10`}
+    >
       <Link to="/">
         <img src={logo} alt="logo" className="w-10" />
       </Link>
