@@ -986,7 +986,7 @@ export const categories = [
   "Lathe Machine",
   "Shaper",
   "Radial Drilling Machine",
-  "Planners",
+  "Planner",
   "Slotting Machine",
   "Milling Machine",
   "Power Press",
