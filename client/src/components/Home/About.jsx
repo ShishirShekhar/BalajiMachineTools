@@ -13,8 +13,8 @@ const About = () => {
             <h2 className="text-2xl font-semibold">About</h2>
             <p className="text-justify">
               Easing production work in agriculture, metal, and other industries
-              is how we are supporting the growth of companies. We are Sach
-              Khand Machine Tools, widely respected manufacturer of industrial
+              is how we are supporting the growth of companies. We are Balaji
+              Machine Tools, widely respected manufacturer of industrial
               machines. Formed many decades back in 1970, our company is
               revolutionizing the industry by introducing supreme functionality
               machines such as Semi Gear Head Lathe Machine, Lathe Machine,
@@ -34,10 +34,10 @@ const About = () => {
           <div className="py-2">
             <h2 className="text-2xl font-semibold">Teams</h2>
             <p className="text-justify">
-              Sach Khand Machine Tools is innovating better technology
-              industrial machines and winning clients trust with the support of
-              100 strong-willed and industry knowledge possessing experts. We
-              are proud and happy to have with us all hardworking technicians,
+              Balaji Machine Tools is innovating better technology industrial
+              machines and winning clients trust with the support of 100
+              strong-willed and industry knowledge possessing experts. We are
+              proud and happy to have with us all hardworking technicians,
               engineers, designers, quality inspectors, logistic personnel,
               sales agents and more to support our growth and industrial
               operations. It is their dedication to work better on every project
