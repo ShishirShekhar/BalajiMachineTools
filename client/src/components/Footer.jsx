@@ -12,7 +12,7 @@ const Footer = () => {
       id="footer"
       className="py-4 bg-blue-500 text-white flex flex-col md:flex-row justify-evenly items-center"
     >
-      <div className="flex flex-wrap justify-around items-center w-full py-5 md:py-0">
+      <div className="flex flex-wrap justify-around items-center w-full py-5 md:py-0 px-2 md:px-0 gap-2">
         <div>
           <img src={logo} alt="logo" className="w-48" />
           <p className="text-xl font-bold">Balaji Machine Tools</p>
