@@ -70,15 +70,40 @@ const Product = () => {
                 <p className="">Min Price: ₹{product?.minPrice || 0}</p>
                 <p className="">Max Price: ₹{product?.maxPrice || 0}</p>
               </div>
-              <a
-                href={`https://wa.me/7091045216?text=${message}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <button className="w-full bg-blue-500 rounded-lg text-white p-2 h-10 flex items-center justify-center transition hover:bg-blue-700 hover:text-xl">
-                  Enquire Now
-                </button>
-              </a>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href={`https://wa.me/7091045216?text=${message}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full"
+                >
+                  <button className="w-full bg-blue-500 rounded-lg text-white p-2 h-10 flex items-center justify-center transition hover:bg-blue-700 hover:text-xl">
+                    Enquire Now
+                  </button>
+                </a>
+                <div className="flex flex-col md:flex-row w-full gap-2">
+                  <a
+                    href={`mailto:salesbalajimachines@gmail.com?subject=Inquiry for ${product.name}&body=${message}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                  >
+                    <button className="w-full bg-blue-500 rounded-lg text-white p-2 h-10 flex items-center justify-center transition hover:bg-blue-700 hover:text-xl">
+                      Email Us
+                    </button>
+                  </a>
+                  <a
+                    href="tel:+918437680240"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                  >
+                    <button className="w-full bg-blue-500 rounded-lg text-white p-2 h-10 flex items-center justify-center transition hover:bg-blue-700 hover:text-xl">
+                      Call Us
+                    </button>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -103,7 +128,10 @@ const Product = () => {
                   {Object.values(product?.specifications)[0].map((_, index) => (
                     <tr key={index}>
                       {Object.entries(product?.specifications).map((items) => (
-                        <td className="text-md px-6 py-1 text-center" key={items}>
+                        <td
+                          className="text-md px-6 py-1 text-center"
+                          key={items}
+                        >
                           {items[1][index]}
                         </td>
                       ))}
