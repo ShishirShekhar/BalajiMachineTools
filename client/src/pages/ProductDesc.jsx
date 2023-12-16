@@ -103,7 +103,7 @@ const Product = () => {
                   {Object.values(product?.specifications)[0].map((_, index) => (
                     <tr key={index}>
                       {Object.entries(product?.specifications).map((items) => (
-                        <td className="text-md px-6 py-1 text-center">
+                        <td className="text-md px-6 py-1 text-center" key={items}>
                           {items[1][index]}
                         </td>
                       ))}
