@@ -30,16 +30,31 @@ const Products = () => {
   }, [search]);
 
   useEffect(() => {
+    const initialProducts =
+      search === ""
+        ? products
+        : products.filter((item) => {
+            const nameMatch = item.name
+              .toLowerCase()
+              .includes(search.toLowerCase());
+            const categoryMatch = item.category
+              .toLowerCase()
+              .includes(search.toLowerCase());
+            return nameMatch || categoryMatch;
+          });
+
     const handleFilter = () => {
       filter.size === 0
-        ? setSearchProducts(products)
-        : setSearchProducts((prev) =>
-            prev.filter((item) => filter.has(item.category.toLowerCase()))
+        ? setSearchProducts(initialProducts)
+        : setSearchProducts(
+            initialProducts.filter((item) =>
+              filter.has(item.category.toLowerCase())
+            )
           );
     };
 
     handleFilter();
-  }, [filter]);
+  }, [filter, search]);
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -61,6 +76,7 @@ const Products = () => {
 
   return (
     <div className="min-h-screen py-10">
+      {console.log(filter)}
       <div className="flex gap-2">
         <div className="hidden md:block shadow-xl px-5 pb-10">
           <h2 className="text-2xl pb-2">Select Category</h2>
