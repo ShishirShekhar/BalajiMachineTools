@@ -23,19 +23,19 @@ const Nav = () => {
       </Link>
       <div className="md:flex justify-evenly w-2/3 hidden">
         <p>
-          <a href="#home">Home</a>
+          <a href="/#home">Home</a>
         </p>
         <p>
           <Link to="/products">Our Products</Link>
         </p>
         <p>
-          <a href="#about">About Us</a>
+          <a href="/#about">About Us</a>
         </p>
         <p>
-          <a href="#gallery">Gallery</a>
+          <a href="/#gallery">Gallery</a>
         </p>
         <p>
-          <a href="#footer">Contact Us</a>
+          <a href="/#footer">Contact Us</a>
         </p>
       </div>
       <button className="text-xl md:hidden" onClick={switchMenu}>

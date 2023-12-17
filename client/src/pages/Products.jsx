@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProductCard from "../components/Product/ProductCard";
 import { products } from "../constants/products";
 import { categories } from "../constants/products";
@@ -8,6 +8,7 @@ const Products = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState(new Set());
   const [menu, setMenu] = useState(false);
+  const ref = useRef(null);
 
   useEffect(() => {
     const handleSearch = () => {
