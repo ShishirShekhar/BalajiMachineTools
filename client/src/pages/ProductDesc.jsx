@@ -110,7 +110,7 @@ const Product = () => {
           <div className="py-5 pt-10">
             <h1 className="text-2xl pb-2">Technical Specification:</h1>
             <div className=" overflow-scroll">
-              {product && (
+              {Object.keys(product.specifications).length ? (
                 <table className="table-auto">
                   <thead>
                     <tr className="border border-x-0">
@@ -144,6 +144,13 @@ const Product = () => {
                     )}
                   </tbody>
                 </table>
+              ) : (
+                <div>
+                  <p>
+                    This product technical specifications are not available.
+                  </p>
+                  <p>Please contact us for more info.</p>
+                </div>
               )}
             </div>
           </div>
