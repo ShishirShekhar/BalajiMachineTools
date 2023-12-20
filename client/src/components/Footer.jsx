@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
+import logo from "../images/white_logo.png";
 import facebook from "../images/facebook.png";
 import instagram from "../images/instagram.png";
 import linkedin from "../images/linkedin.png";

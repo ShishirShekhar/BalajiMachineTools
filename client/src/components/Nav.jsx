@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiCloseFill } from "react-icons/ri";
-import logo from "../images/logo.png";
+import logo from "../images/white_logo.png";
 
 const Nav = () => {
   const [menu, setMenu] = useState(false);
@@ -19,7 +19,7 @@ const Nav = () => {
       } z-10`}
     >
       <Link to="/">
-        <img src={logo} alt="logo" className="w-10" />
+        <img src={logo} alt="logo" className="w-14" />
       </Link>
       <div className="md:flex justify-evenly w-2/3 hidden">
         <p>
