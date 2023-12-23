@@ -27,7 +27,7 @@ const MobileNav = () => {
   });
 
   return (
-    <div className="fixed bottom-0 bg-white w-full flex md:hidden justify-evenly ">
+    <div className="fixed bottom-0 bg-white w-full flex md:hidden justify-evenly border-t-2">
       <Link to={"/"}>
         {active === "home" ? (
           <div className="flex flex-col items-center py-2 px-4 text-blue-500">
