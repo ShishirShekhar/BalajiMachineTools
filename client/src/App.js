@@ -5,6 +5,7 @@ import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+import MobileNav from "./components/MobileNav";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        <MobileNav />
       </Router>
     </div>
   );
