@@ -10,7 +10,7 @@ const Gallery = () => {
         {products.slice(0, 8).map((product) => {
           return (
             <div
-              className="box-shadow rounded-xl p-4 w-44 h-44 md:w-72 md:h-72"
+              className="box-shadow rounded-xl p-4 w-40 h-40 md:w-72 md:h-72"
               key={product.id}
             >
               <Link to={`/products/${product.id}`}>
