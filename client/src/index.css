@@ -16,25 +16,11 @@ html {
   @apply bg-blue-500 bg-opacity-90 text-white
 }
 
-.featured-product {
-  @apply w-56 h-56 sm:w-96 sm:h-96 md:w-64 md:h-64 shadow-xl rounded-xl relative overflow-hidden bg-white;
-}
-
-.featured-product img {
-  @apply absolute p-4;
-}
-
-.featured-product .overlay {
-  @apply absolute -bottom-full w-full h-full transition-all bg-blue-500 bg-opacity-90;
-  transition: .5s ease;
-}
-
 .featured-product:hover .overlay {
   @apply bottom-0;
 }
 
 .featured-product .text {
-  @apply text-lg text-center absolute top-1/2 left-1/2 text-white w-full px-4 font-bold;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);

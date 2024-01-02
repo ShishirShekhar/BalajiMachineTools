@@ -8,14 +8,19 @@ const FeaturedProduct = (props) => {
         {props.products.map((product, index) => {
           return (
             <Link to={`/products/${product.id}`}>
-              <div className="featured-product" key={product.id}>
+              <div
+                className="featured-product w-56 h-56 sm:w-96 sm:h-96 md:w-64 md:h-64 shadow-xl rounded-xl relative overflow-hidden bg-white"
+                key={product.id}
+              >
                 <img
                   src={product.img}
                   alt={product.name}
-                  className="w-full h-full"
+                  className="w-full h-full absolute p-4"
                 />
-                <div className="overlay">
-                  <p className="text">{product.name}</p>
+                <div className="overlay transition absolute -bottom-full w-full h-full bg-blue-500 bg-opacity-90">
+                  <p className="text text-lg text-center absolute top-1/2 left-1/2 text-white w-full px-4 font-bold">
+                    {product.name}
+                  </p>
                 </div>
               </div>
             </Link>
