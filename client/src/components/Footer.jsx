@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div
       id="footer"
-      className="py-4 bg-blue-500 text-white flex flex-col md:flex-row justify-evenly items-center"
+      className="py-4 pb-14 mb:pb-0 bg-blue-500 text-white flex flex-col md:flex-row justify-evenly items-center"
     >
       <div className="flex flex-wrap justify-around items-center w-full py-5 md:py-0 px-2 md:px-0 gap-2">
         <div>
