@@ -16,11 +16,13 @@ const ProductCard = ({ product }) => {
   return (
     <div className="box-shadow rounded-xl p-2 w-full h-full flex flex-col justify-between">
       <div className="flex items-center justify-center">
-        <img
-          src={product?.img}
-          alt={product?.name || "Product"}
-          className="rounded-xl p-4 h-56 w-56 hover:p-0 transition"
-        />
+        <Link to={`/products/${product?.id}`}>
+          <img
+            src={product?.img}
+            alt={product?.name || "Product"}
+            className="rounded-xl p-4 h-56 w-56 hover:p-0 transition"
+          />
+        </Link>
       </div>
 
       <div>
