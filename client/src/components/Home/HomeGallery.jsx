@@ -13,11 +13,7 @@ const NextArrow = (props) => {
       className={className}
       style={{
         ...style,
-        color: "#fff",
-        height: "100%",
-        cursor: "pointer",
-        zIndex: 1,
-        transition: "background-color 0.3s",
+        padding: "0 ",
       }}
       onClick={onClick}
     >
@@ -33,11 +29,7 @@ const PrevArrow = (props) => {
       className={className}
       style={{
         ...style,
-        color: "#fff",
-        height: "100%",
-        cursor: "pointer",
-        zIndex: 1,
-        transition: "background-color 0.3s",
+        padding: "0 5px"
       }}
       onClick={onClick}
     >
@@ -89,13 +81,16 @@ const HomeGallery = () => {
   };
 
   return (
-    <div className="py-10 px-5 md:px-10 bg-blue-500" id="gallery">
+    <div
+      className="py-10 px-5 md:px-10 bg-blue-500 overflow-hidden"
+      id="gallery"
+    >
       <h1 className="text-4xl text-center font-semibold py-10 text-white">
         Gallery
       </h1>
       <Slider {...settings} className="relative">
         {products.slice(0, 8).map((product) => (
-          <div key={product.id} className="rounded-xl p-4 h-72 md:h-72 mx-2">
+          <div key={product.id} className="rounded-xl p-4 h-72 md:h-72">
             <Link to={`/products/${product.id}`}>
               <img
                 src={product.img}
