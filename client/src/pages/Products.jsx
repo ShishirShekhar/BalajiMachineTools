@@ -89,7 +89,7 @@ const Products = () => {
         </div>
       </div>
 
-      <div className="filter flex gap-2 p-2 whitespace-nowrap overflow-scroll border-b-2">
+      <div className="flex gap-2 p-2 whitespace-nowrap overflow-scroll border-b-2">
         {categories.map((category) => (
           <button
             className={`border border-black shadow rounded px-2 ${
