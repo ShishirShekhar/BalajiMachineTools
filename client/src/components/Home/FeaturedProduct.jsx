@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 const FeaturedProduct = (props) => {
   return (
-    <div className="py-10 px-10 text-4xl featured-products">
+    <div className="py-10 px-5 md:px-10 text-4xl featured-products">
       <h1 className="text-center font-semibold">{props.title}</h1>
       <div className="flex flex-wrap gap-5 justify-around py-10">
         {props.products.map((product, index) => {
           return (
             <Link to={`/products/${product.id}`}>
               <div
-                className="featured-product w-56 h-56 sm:w-96 sm:h-96 md:w-64 md:h-64 shadow-xl rounded-xl relative overflow-hidden bg-white"
+                className="featured-product w-40 h-40 md:w-64 md:h-64 shadow-xl rounded-xl relative overflow-hidden bg-white"
                 key={product.id}
               >
                 <img
