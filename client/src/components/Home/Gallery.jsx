@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 
 const Gallery = () => {
   return (
-    <div className="py-10 px-10" id="gallery">
+    <div className="py-10 px-5 md:px-10" id="gallery">
       <h1 className="text-4xl text-center font-semibold">Gallery</h1>
       <div className="flex flex-wrap justify-evenly">
         {products.slice(0, 8).map((product) => {
           return (
             <Link to={`/products/${product.id}`}>
-              <div className="shadow-xl rounded-xl p-4" key={product.img}>
+              <div className="shadow-xl rounded-xl p-4 w-44 h-44 md:w-72 md:h-72" key={product.img}>
                 <img
                   src={product.img}
                   alt={product.name}
-                  className="w-72 h-72 p-2 hover:p-0 transition-all"
+                  className="w-full h-full p-2 hover:p-0 transition-all"
                 />
               </div>
             </Link>
