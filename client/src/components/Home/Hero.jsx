@@ -1,3 +1,5 @@
+import ActionButton from "../ActionButton";
+
 const Hero = () => {
   return (
     <div className="hero h-screen text-white">
@@ -5,11 +7,15 @@ const Hero = () => {
         <p className="text-6xl sm:text-7xl pb-10 px-4 sm:w-1/2 text-center">
           Reliable and Durable Machine Tools
         </p>
-        <a href="#gallery">
-          <button className="bg-blue-500 px-4 py-2 rounded-xl">
-            Enquire Now
-          </button>
-        </a>
+        <div>
+          <ActionButton
+            type="primary"
+            text="Enquire Now"
+            action="link"
+            value="/products"
+            size="medium"
+          />
+        </div>
       </div>
     </div>
   );
