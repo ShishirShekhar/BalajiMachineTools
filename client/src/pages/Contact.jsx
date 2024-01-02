@@ -38,9 +38,9 @@ const Contact = () => {
             <iframe
               title="Balaji Machine Tools"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3390.2581442302503!2d75.19921797619476!3d31.817962374079247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391bc2f5df8080f9%3A0x494170b7cc27e970!2sGT%20Rd%2C%20Batala%2C%20Punjab%20143505!5e0!3m2!1sen!2sin!4v1704193994950!5m2!1sen!2sin"
-              allowfullscreen="true"
+              allowFullScreen={true}
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
               className="min-h-[26rem] w-full"
             ></iframe>
           </div>
