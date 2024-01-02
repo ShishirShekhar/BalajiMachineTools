@@ -1,71 +1,39 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "../components/Product/ProductCard";
 import { products } from "../constants/products";
 import { categories } from "../constants/products";
 import { FaSearch } from "react-icons/fa";
 
 const Products = () => {
-  const [searchProducts, setSearchProducts] = useState(products);
-  const [search, setSearch] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
-    const handleSearch = () => {
-      search === ""
-        ? setSearchProducts(products)
-        : setSearchProducts((prev) =>
-            prev.filter((item) => {
-              const nameMatch = item.name
-                .toLowerCase()
-                .includes(search.toLowerCase());
-              const categoryMatch = item.category
-                .toLowerCase()
-                .includes(search.toLowerCase());
-              return nameMatch || categoryMatch;
-            })
-          );
-    };
-
-    handleSearch();
-  }, [search]);
-
-  useEffect(() => {
-    const initialProducts =
-      search === ""
-        ? products
-        : products.filter((item) => {
-            const nameMatch = item.name
-              .toLowerCase()
-              .includes(search.toLowerCase());
-            const categoryMatch = item.category
-              .toLowerCase()
-              .includes(search.toLowerCase());
-            return nameMatch || categoryMatch;
-          });
-
     const handleFilter = () => {
-      const filteredProducts =
-        selectedCategory.length === 0
-          ? initialProducts
-          : initialProducts.filter((item) => {
-              console.log(selectedCategory);
-              return item.category
-                .toLowerCase()
-                .includes(selectedCategory.toLowerCase());
-            });
-
-      setSearchProducts(filteredProducts);
+      const filtered = products.filter((product) => {
+        const searchTerm = searchQuery.toLowerCase();
+        const categoryMatch = selectedCategory.toLowerCase();
+        return (
+          (!searchTerm ||
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.category.toLowerCase().includes(searchTerm)) &&
+          (!categoryMatch || product.category.toLowerCase() === categoryMatch)
+        );
+      });
+      setFilteredProducts(filtered);
     };
 
+    // Initial filtering and update on changes
     handleFilter();
-  }, [selectedCategory, search]);
+  }, [products, searchQuery, selectedCategory]);
 
-  const handleChange = (e) => {
-    setSearch(e.target.value);
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
-  const handleRadioChange = (e) => {
-    e.target.value === selectedCategory
+  const handleCategoryChange = (e) => {
+    selectedCategory === e.target.value
       ? setSelectedCategory("")
       : setSelectedCategory(e.target.value);
   };
@@ -80,8 +48,7 @@ const Products = () => {
             id="search"
             placeholder="Search product by their name or category"
             className="rounded focus:outline-none w-full px-5 py-2"
-            value={search}
-            onChange={handleChange}
+            onChange={handleSearchChange}
           />
           <button className="bg-yellow-500 h-full absolute top-0 right-0 rounded flex items-center px-4">
             <FaSearch />
@@ -92,12 +59,12 @@ const Products = () => {
       <div className="flex gap-2 p-2 whitespace-nowrap overflow-scroll border-b-2">
         {categories.map((category) => (
           <button
-            className={`border border-black shadow rounded px-2 ${
+            className={`category border border-black shadow rounded px-2 ${
               category === selectedCategory ? "bg-blue-500 text-white" : ""
             }`}
             value={category}
             key={category}
-            onClick={handleRadioChange}
+            onClick={handleCategoryChange}
           >
             {category}
           </button>
@@ -105,7 +72,7 @@ const Products = () => {
       </div>
 
       <div className="flex flex-wrap justify-evenly gap-10 py-10 px-5 md:px-10">
-        {searchProducts.map((product) => (
+        {filteredProducts.map((product) => (
           <div className="px-4 md:px-0 w-full md:w-64" key={product.id}>
             <ProductCard product={product} key={product.id} />
           </div>
