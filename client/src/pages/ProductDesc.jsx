@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
 import { RiStarSLine, RiStarSFill } from "react-icons/ri";
 import { products } from "../constants/products";
+import Table from "../components/ProductDesc/Table";
 
 const Product = () => {
   const { id } = useParams();
@@ -111,39 +112,7 @@ const Product = () => {
             <h1 className="text-2xl pb-2">Technical Specification:</h1>
             <div className=" overflow-scroll">
               {Object.keys(product.specifications).length ? (
-                <table className="table-auto">
-                  <thead>
-                    <tr className="border border-x-0">
-                      {Object.entries(product?.specifications).map((items) => (
-                        <th
-                          className="text-md px-6 py-3 text-center"
-                          key={items[0]}
-                          style={{ minWidth: "10rem" }}
-                        >
-                          {items[0]}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Object.values(product?.specifications)[0].map(
-                      (_, index) => (
-                        <tr key={index}>
-                          {Object.entries(product?.specifications).map(
-                            (items) => (
-                              <td
-                                className="text-md px-6 py-1 text-center"
-                                key={items}
-                              >
-                                {items[1][index]}
-                              </td>
-                            )
-                          )}
-                        </tr>
-                      )
-                    )}
-                  </tbody>
-                </table>
+                <Table product={product} />
               ) : (
                 <div>
                   <p>
