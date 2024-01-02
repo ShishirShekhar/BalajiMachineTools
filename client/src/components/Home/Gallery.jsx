@@ -6,7 +6,7 @@ const Gallery = () => {
   return (
     <div className="py-10 px-5 md:px-10" id="gallery">
       <h1 className="text-4xl text-center font-semibold py-10">Gallery</h1>
-      <div className="flex flex-wrap justify-evenly gap-2">
+      <div className="flex flex-wrap justify-evenly gap-5">
         {products.slice(0, 8).map((product) => {
           return (
             <div
