@@ -9,7 +9,7 @@ const Product = () => {
   const product = products.find((product) => product.id === id);
 
   return (
-    <div className="py-10 px-10">
+    <div className="p-5 md:p-10">
       {product === undefined ? (
         <div className="flex items-center justify-center h-[30rem] md:h-[32rem]">
           <h1 className="text-5xl md:text-7xl font-bold text-center">
