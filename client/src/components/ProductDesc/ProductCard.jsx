@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { RiStarSLine, RiStarSFill } from "react-icons/ri";
+import ActionButton from "../ActionButton";
 
 const ProductCard = ({ product }) => {
   let message = `Hello, I visited this website https://smtlathemachine.vercel.app/ , and I would like to know more about ${
@@ -58,37 +59,28 @@ const ProductCard = ({ product }) => {
           <p className="">Max Price: ₹{product?.maxPrice || 0}</p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <a
-            href={`https://wa.me/7091045216?text=${message}`}
-            target="_blank"
-            rel="noreferrer"
-            className="w-full"
-          >
-            <button className="w-full bg-blue-500 rounded-lg text-white p-2 h-10 flex items-center justify-center transition hover:bg-blue-700 hover:text-xl">
-              Enquire Now
-            </button>
-          </a>
+          <ActionButton
+            type="primary"
+            text="Enquire Now"
+            action="whatsapp"
+            value={message}
+            size="medium"
+          />
           <div className="flex flex-col md:flex-row w-full gap-2">
-            <a
-              href={`mailto:salesbalajimachines@gmail.com?subject=Inquiry for ${product.name}&body=${message}`}
-              target="_blank"
-              rel="noreferrer"
-              className="w-full"
-            >
-              <button className="w-full bg-blue-500 rounded-lg text-white p-2 h-10 flex items-center justify-center transition hover:bg-blue-700 hover:text-xl">
-                Email Us
-              </button>
-            </a>
-            <a
-              href="tel:+918437680240"
-              target="_blank"
-              rel="noreferrer"
-              className="w-full"
-            >
-              <button className="w-full bg-blue-500 rounded-lg text-white p-2 h-10 flex items-center justify-center transition hover:bg-blue-700 hover:text-xl">
-                Call Us
-              </button>
-            </a>
+            <ActionButton
+              type="secondary"
+              text="Email Us"
+              action="mail"
+              value={`salesbalajimachines@gmail.com?subject=Inquiry for ${product.name}&body=${message}`}
+              size="medium"
+            />
+            <ActionButton
+              type="secondary"
+              text="Call Us"
+              action="call"
+              value={8437680240}
+              size="medium"
+            />
           </div>
         </div>
       </div>
