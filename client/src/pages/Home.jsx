@@ -25,8 +25,8 @@ const Home = () => {
           products={featuredProducts}
         />
       </section>
-      <About />
       <Gallery />
+      <About />
     </div>
   );
 };
