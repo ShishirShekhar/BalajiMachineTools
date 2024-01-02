@@ -117,7 +117,7 @@ const Products = () => {
                 {categories.map((category) => (
                   <p className="md:w-56">
                     <input
-                      type="checkbox"
+                      type="radio"
                       name={category}
                       id={category}
                       value={category}
