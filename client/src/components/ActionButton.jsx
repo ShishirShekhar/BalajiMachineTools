@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ActionButton = ({
   type = "primary",
   text = "Click Me",
@@ -61,6 +63,29 @@ const ActionButton = ({
           </button>
         </a>
       );
+    } else if (action === "whatsapp") {
+      return (
+        <a
+          href={`https://wa.me/8437680240?text=${value}`}
+          target="_blank"
+          rel="noreferrer"
+          className="w-full"
+        >
+          <button
+            className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
+          >
+            {text}
+          </button>
+        </a>
+      );
+    } else if (action === "link") {
+      <Link to={value}>
+        <button
+          className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
+        >
+          {text}
+        </button>
+      </Link>;
     } else {
       <button
         className={`w-full bg-blue-500 rounded-lg text-white text-${textSize} p-2 flex items-center justify-center transition hover:bg-blue-700`}
@@ -70,7 +95,7 @@ const ActionButton = ({
     }
   };
 
-  return <div>{actionBlock()}</div>;
+  return <div className="w-full">{actionBlock()}</div>;
 };
 
 export default ActionButton;
