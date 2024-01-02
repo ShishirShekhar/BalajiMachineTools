@@ -6,9 +6,11 @@ const Nav = () => {
 
   return (
     <div
-      className={`bg-black bg-opacity-50 px-5 md:px-10 py-4 text-white flex justify-between items-center w-full ${
-        location.pathname === "/" ? "fixed" : ""
-      } z-10`}
+      className={`px-5 md:px-10 py-4 text-white flex justify-between items-center w-full ${
+        location.pathname === "/"
+          ? "fixed z-10 bg-black bg-opacity-50"
+          : "bg-blue-500"
+      }`}
     >
       <div className="flex items-center w-full md:w-fit">
         <Link to="/">
