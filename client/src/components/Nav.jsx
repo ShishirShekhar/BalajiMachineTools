@@ -37,7 +37,7 @@ const Nav = () => {
           <a href="/#gallery">Gallery</a>
         </p>
         <p>
-          <a href="/#footer">Contact Us</a>
+          <a href="/contact">Contact Us</a>
         </p>
       </div>
     </div>
