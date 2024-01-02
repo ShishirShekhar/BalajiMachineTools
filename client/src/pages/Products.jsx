@@ -26,7 +26,7 @@ const Products = () => {
 
     // Initial filtering and update on changes
     handleFilter();
-  }, [products, searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategory]);
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
