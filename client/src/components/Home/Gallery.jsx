@@ -9,15 +9,18 @@ const Gallery = () => {
       <div className="flex flex-wrap justify-evenly">
         {products.slice(0, 8).map((product) => {
           return (
-            <Link to={`/products/${product.id}`}>
-              <div className="shadow-xl rounded-xl p-4 w-44 h-44 md:w-72 md:h-72" key={product.img}>
+            <div
+              className="shadow-xl rounded-xl p-4 w-44 h-44 md:w-72 md:h-72"
+              key={product.id}
+            >
+              <Link to={`/products/${product.id}`}>
                 <img
                   src={product.img}
                   alt={product.name}
                   className="w-full h-full p-2 hover:p-0 transition-all"
                 />
-              </div>
-            </Link>
+              </Link>
+            </div>
           );
         })}
       </div>
