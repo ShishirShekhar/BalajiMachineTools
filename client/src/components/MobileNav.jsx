@@ -7,9 +7,9 @@ import { RiCustomerServiceLine, RiCustomerServiceFill } from "react-icons/ri";
 const MobileNav = () => {
   const [active, setActive] = useState("home");
   const location = useLocation();
+  const page = location.pathname;
 
   useEffect(() => {
-    const page = location.pathname;
 
     const updateIcon = () => {
       if (page === "/") {
@@ -24,7 +24,7 @@ const MobileNav = () => {
     };
 
     updateIcon();
-  });
+  }, [page]);
 
   return (
     <div className="fixed bottom-0 bg-white w-full flex md:hidden justify-evenly border-t-2">
