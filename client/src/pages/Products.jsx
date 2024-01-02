@@ -6,7 +6,7 @@ import { categories } from "../constants/products";
 const Products = () => {
   const [searchProducts, setSearchProducts] = useState(products);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState(new Set());
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [menu, setMenu] = useState(false);
 
   useEffect(() => {
@@ -44,30 +44,28 @@ const Products = () => {
           });
 
     const handleFilter = () => {
-      filter.size === 0
-        ? setSearchProducts(initialProducts)
-        : setSearchProducts(
-            initialProducts.filter((item) =>
-              filter.has(item.category.toLowerCase())
-            )
-          );
+      const filteredProducts =
+        selectedCategory.length === 0
+          ? initialProducts
+          : initialProducts.filter((item) => {
+              console.log(selectedCategory);
+              return item.category
+                .toLowerCase()
+                .includes(selectedCategory.toLowerCase());
+            });
+
+      setSearchProducts(filteredProducts);
     };
 
     handleFilter();
-  }, [filter, search]);
+  }, [selectedCategory, search]);
 
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
-  const handleCheck = (e) => {
-    e.target.checked
-      ? setFilter((prev) => new Set(prev).add(e.target.value.toLowerCase()))
-      : setFilter((prev) => {
-          const newSet = new Set(prev);
-          newSet.delete(e.target.value.toLowerCase());
-          return newSet;
-        });
+  const handleRadioChange = (e) => {
+    setSelectedCategory(e.target.value);
   };
 
   const handleMenu = () => {
@@ -76,7 +74,6 @@ const Products = () => {
 
   return (
     <div className="min-h-screen py-10">
-      {console.log(filter)}
       <div className="flex gap-2">
         <div className="hidden md:block shadow-xl px-5 pb-10">
           <h2 className="text-2xl pb-2">Select Category</h2>
@@ -84,12 +81,13 @@ const Products = () => {
             {categories.map((category) => (
               <p className="w-56">
                 <input
-                  type="checkbox"
+                  type="radio"
                   name={category}
                   id={category}
                   value={category}
                   key={category}
-                  onChange={handleCheck}
+                  checked={selectedCategory === category}
+                  onChange={handleRadioChange}
                 />
                 <label htmlFor={category} className="px-2">
                   {category}
@@ -124,7 +122,8 @@ const Products = () => {
                       id={category}
                       value={category}
                       key={category}
-                      onChange={handleCheck}
+                      checked={selectedCategory === category}
+                      onChange={handleRadioChange}
                     />
                     <label htmlFor={category} className="px-2">
                       {category}
