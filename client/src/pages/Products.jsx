@@ -79,7 +79,7 @@ const Products = () => {
           <h2 className="text-2xl pb-2">Select Category</h2>
           <div>
             {categories.map((category) => (
-              <p className="w-56">
+              <p className="w-56" key={category}>
                 <input
                   type="radio"
                   name={category}
@@ -115,7 +115,7 @@ const Products = () => {
               </h2>
               <div className={!menu ? "hidden" : ""}>
                 {categories.map((category) => (
-                  <p className="md:w-56">
+                  <p className="md:w-56" key={category}>
                     <input
                       type="radio"
                       name={category}
@@ -135,7 +135,7 @@ const Products = () => {
           </div>
           <div className="flex flex-wrap justify-evenly gap-10 py-10">
             {searchProducts.map((product) => (
-              <div className="px-4 md:px-0 w-full md:w-64">
+              <div className="px-4 md:px-0 w-full md:w-64" key={product.id}>
                 <ProductCard product={product} key={product.id} />
               </div>
             ))}
