@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { RiStarSLine, RiStarSFill } from "react-icons/ri";
 import ActionButton from "../ActionButton";
 
-const ProductCard = ({ product }) => {
+const ProductDetail = ({ product }) => {
   const message = `Hello, I visited this website ${
     window.location.href
   }, and I would like to know more about ${product?.name || ""}`;
@@ -86,4 +86,4 @@ const ProductCard = ({ product }) => {
   );
 };
 
-export default ProductCard;
+export default ProductDetail;

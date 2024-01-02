@@ -46,7 +46,7 @@ const PrevArrow = (props) => {
   );
 };
 
-const Gallery = () => {
+const HomeGallery = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -110,4 +110,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default HomeGallery;

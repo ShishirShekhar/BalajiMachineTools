@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../components/Home/Hero";
-import About from "../components/Home/About";
-import Gallery from "../components/Home/Gallery";
+import HomeAbout from "../components/Home/HomeAbout";
+import HomeGallery from "../components/Home/HomeGallery";
 import FeaturedProduct from "../components/Home/FeaturedProduct";
 import {
   popularProducts,
@@ -25,8 +25,8 @@ const Home = () => {
           products={featuredProducts}
         />
       </section>
-      <Gallery />
-      <About />
+      <HomeGallery />
+      <HomeAbout />
     </div>
   );
 };

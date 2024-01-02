@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { products } from "../constants/products";
-import ProductCard from "../components/ProductDesc/ProductCard";
+import ProductDetail from "../components/ProductDesc/ProductDetail";
 import Table from "../components/ProductDesc/Table";
 
 const Product = () => {
@@ -20,7 +20,7 @@ const Product = () => {
 
   return (
     <div className="p-5 md:p-10">
-      <ProductCard product={product} />
+      <ProductDetail product={product} />
 
       <div className="py-5 pt-10">
         <h1 className="text-2xl pb-2">Technical Specification:</h1>
