@@ -5,34 +5,38 @@ const Contact = () => {
   return (
     <div className="p-5 md:p-10">
       <div className="flex flex-col justify-center">
-        <h1 className="text-3xl font-semibold">Contact Details</h1>
-        <div className="flex flex-col md:flex-row justify-between">
-          <div className="py-2 flex flex-col justify-evenly h-96 ">
+        <h1 className="text-3xl font-semibold mb-6 md:mb-10">
+          Contact Details
+        </h1>
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col gap-6 md:w-1/2">
             <div>
               <p className="text-2xl">Address:</p>
               <p className="text-xl">G.T Road, Batala 143505, Punjab, India</p>
             </div>
-            <ActionButton
-              type="secondary"
-              text="Call Us 1"
-              action="call"
-              value={8437680240}
-              size="medium"
-            />
-            <ActionButton
-              type="secondary"
-              text="Call Us 2"
-              action="call"
-              value={9814415150}
-              size="medium"
-            />
-            <ActionButton
-              type="secondary"
-              text="Email Us"
-              action="mail"
-              value="salesbalajimachines@gmail.com"
-              size="medium"
-            />
+            <div className="flex flex-col gap-2">
+              <ActionButton
+                type="secondary"
+                text="Call Us 1"
+                action="call"
+                value={8437680240}
+                size="medium"
+              />
+              <ActionButton
+                type="secondary"
+                text="Call Us 2"
+                action="call"
+                value={9814415150}
+                size="medium"
+              />
+              <ActionButton
+                type="secondary"
+                text="Email Us"
+                action="mail"
+                value="salesbalajimachines@gmail.com"
+                size="medium"
+              />
+            </div>
           </div>
           <div className="md:w-1/2">
             <iframe

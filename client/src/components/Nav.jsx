@@ -1,8 +1,17 @@
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../images/white_logo.png";
 
 const Nav = () => {
   const location = useLocation();
+
+  const navLinks = [
+    { path: "/#home", label: "Home" },
+    { path: "/products", label: "Our Products" },
+    { path: "/#about", label: "About Us" },
+    { path: "/#gallery", label: "Gallery" },
+    { path: "/contact", label: "Contact Us" },
+  ];
 
   return (
     <div
@@ -26,21 +35,15 @@ const Nav = () => {
         </div>
       </div>
       <div className="md:flex justify-evenly gap-5 lg:gap-10 hidden">
-        <p>
-          <a href="/#home">Home</a>
-        </p>
-        <p>
-          <Link to="/products">Our Products</Link>
-        </p>
-        <p>
-          <a href="/#about">About Us</a>
-        </p>
-        <p>
-          <a href="/#gallery">Gallery</a>
-        </p>
-        <p>
-          <a href="/contact">Contact Us</a>
-        </p>
+        {navLinks.map((link, index) => (
+          <p key={index}>
+            {link.path.startsWith("/") ? (
+              <Link to={link.path}>{link.label}</Link>
+            ) : (
+              <a href={link.path}>{link.label}</a>
+            )}
+          </p>
+        ))}
       </div>
     </div>
   );

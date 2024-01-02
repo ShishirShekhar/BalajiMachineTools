@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { FaSearch } from "react-icons/fa";
 import ProductCard from "../components/Product/ProductCard";
 import { products } from "../constants/products";
 import { categories } from "../constants/products";
-import { FaSearch } from "react-icons/fa";
 
 const Products = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -33,20 +33,20 @@ const Products = () => {
   };
 
   const handleCategoryChange = (e) => {
-    selectedCategory === e.target.value
-      ? setSelectedCategory("")
-      : setSelectedCategory(e.target.value);
+    setSelectedCategory((prevCategory) =>
+      prevCategory === e.target.value ? "" : e.target.value
+    );
   };
 
   return (
     <div className="min-h-screen">
       <div className="w-full bg-blue-500 pb-5 px-5">
-        <div className="relative">
+        <div className="relative flex items-center">
           <input
             type="text"
             name="search"
             id="search"
-            placeholder="Search product by their name or category"
+            placeholder="Search product by name or category"
             className="rounded focus:outline-none w-full px-5 py-2"
             onChange={handleSearchChange}
           />
@@ -73,8 +73,8 @@ const Products = () => {
 
       <div className="flex flex-wrap justify-evenly gap-10 py-10 px-5 md:px-10">
         {filteredProducts.map((product) => (
-          <div className="px-4 md:px-0 w-full md:w-64" key={product.id}>
-            <ProductCard product={product} key={product.id} />
+          <div className="w-full md:w-64" key={product.id}>
+            <ProductCard product={product} />
           </div>
         ))}
       </div>

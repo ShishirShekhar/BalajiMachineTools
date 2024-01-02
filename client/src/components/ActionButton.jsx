@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const ActionButton = ({
@@ -7,7 +8,8 @@ const ActionButton = ({
   value = "none",
   size = "medium",
 }) => {
-  let features = "bg-blue-500 text-white";
+  let buttonStyles =
+    "w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white";
   let textSize = "text-md";
   let buttonSize = "p-2";
 
@@ -32,24 +34,22 @@ const ActionButton = ({
 
   switch (type) {
     case "primary":
-      features = "bg-blue-500 text-white";
+      buttonStyles += " bg-blue-500 text-white";
       break;
     case "secondary":
-      features = "border-2 border-blue-500 text-blue-500";
+      buttonStyles += " border-2 border-blue-500 text-blue-500";
       break;
     default:
-      features = "bg-blue-500 text-white";
+      buttonStyles += " bg-blue-500 text-white";
       break;
   }
 
-  const actionBlock = () => {
+  const renderActionButton = () => {
     switch (action) {
       case "call":
         return (
-          <a href={`tel:0${value}`}>
-            <button
-              className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
-            >
+          <a href={`tel:${value}`}>
+            <button className={buttonStyles + ` ${textSize} ${buttonSize}`}>
               {text}
             </button>
           </a>
@@ -58,9 +58,7 @@ const ActionButton = ({
       case "mail":
         return (
           <a href={`mailto:${value}`}>
-            <button
-              className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
-            >
+            <button className={buttonStyles + ` ${textSize} ${buttonSize}`}>
               {text}
             </button>
           </a>
@@ -74,9 +72,7 @@ const ActionButton = ({
             rel="noreferrer"
             className="w-full"
           >
-            <button
-              className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
-            >
+            <button className={buttonStyles + ` ${textSize} ${buttonSize}`}>
               {text}
             </button>
           </a>
@@ -85,9 +81,7 @@ const ActionButton = ({
       case "link":
         return (
           <Link to={value}>
-            <button
-              className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
-            >
+            <button className={buttonStyles + ` ${textSize} ${buttonSize}`}>
               {text}
             </button>
           </Link>
@@ -95,16 +89,14 @@ const ActionButton = ({
 
       default:
         return (
-          <button
-            className={`w-full bg-blue-500 rounded-lg text-white text-${textSize} p-2 flex items-center justify-center transition hover:bg-blue-700`}
-          >
+          <button className={`${buttonStyles} ${textSize} ${buttonSize}`}>
             {text}
           </button>
         );
     }
   };
 
-  return <div className="w-full">{actionBlock()}</div>;
+  return <div className="w-full">{renderActionButton()}</div>;
 };
 
 export default ActionButton;

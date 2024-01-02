@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/white_logo.png";
 import facebook from "../images/facebook.png";
@@ -13,6 +14,7 @@ const Footer = () => {
         id="footer"
         className="py-4 flex flex-col md:flex-row justify-evenly items-center"
       >
+        {/* Logo and Company Details */}
         <div className="flex flex-wrap justify-around items-center w-full py-5 md:py-0 px-2 md:px-0 gap-2">
           <div>
             <img src={logo} alt="logo" className="w-48" />
@@ -38,6 +40,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Useful Links */}
         <div className="flex flex-wrap justify-around items-center w-full py-5 md:py-0">
           <div>
             <h1 className="text-2xl">Useful Links</h1>
@@ -57,67 +60,55 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Social Media Links */}
           <div>
             <h1 className="text-2xl">Connect</h1>
             <div className="py-2 flex flex-col justify-evenly h-44">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.facebook.com/ShishirShekhar0/"
-              >
-                <div className="flex items-center">
-                  <img src={facebook} alt="facebook" className="w-8" />
-                  <p>Facebook</p>
-                </div>
-              </a>
-
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.instagram.com/sol_shishir"
-              >
-                <div className="flex items-center">
-                  <img src={instagram} alt="instagram" className="w-8" />
-                  <p>Instagram</p>
-                </div>
-              </a>
-
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.linkedin.com/in/shishir-shekhar"
-              >
-                <div className="flex items-center">
-                  <img src={linkedin} alt="linkedin" className="w-8" />
-                  <p>Linkedin</p>
-                </div>
-              </a>
-
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.twitter.com/ShishirShekhar0"
-              >
-                <div className="flex items-center">
-                  <img src={twitter} alt="twitter" className="w-8" />
-                  <p>Twitter</p>
-                </div>
-              </a>
-
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://wa.me/+918437680240"
-              >
-                <div className="flex items-center">
-                  <img src={whatsapp} alt="whatsapp" className="w-8" />
-                  <p>Whatsapp</p>
-                </div>
-              </a>
+              {[
+                {
+                  link: "https://www.facebook.com/ShishirShekhar0/",
+                  image: facebook,
+                  alt: "Facebook",
+                },
+                {
+                  link: "https://www.instagram.com/sol_shishir",
+                  image: instagram,
+                  alt: "Instagram",
+                },
+                {
+                  link: "https://www.linkedin.com/in/shishir-shekhar",
+                  image: linkedin,
+                  alt: "Linkedin",
+                },
+                {
+                  link: "https://www.twitter.com/ShishirShekhar0",
+                  image: twitter,
+                  alt: "Twitter",
+                },
+                {
+                  link: "https://wa.me/+918437680240",
+                  image: whatsapp,
+                  alt: "Whatsapp",
+                },
+              ].map((item, index) => (
+                <a
+                  key={index}
+                  target="_blank"
+                  rel="noreferrer"
+                  href={item.link}
+                >
+                  <div className="flex items-center">
+                    <img src={item.image} alt={item.alt} className="w-8" />
+                    <p>{item.alt}</p>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Copyright Information */}
       <div className="flex flex-col items-center pb-2">
         <a
           href="https://www.linkedin.com/in/shishir-shekhar/"

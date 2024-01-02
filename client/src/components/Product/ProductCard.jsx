@@ -1,45 +1,42 @@
-import { RiStarSLine, RiStarSFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { RiStarSLine, RiStarSFill } from "react-icons/ri";
 
-const ProductCard = (props) => {
-  const product = props.product;
+const ProductCard = ({ product }) => {
+  const renderStars = () => {
+    const stars = Array.from({ length: 5 }, (_, index) => (
+      <span key={index} className="text-xl">
+        {index + 1 > product?.stars ? <RiStarSLine /> : <RiStarSFill />}
+      </span>
+    ));
+    return (
+      <div className="flex text-yellow-500 items-center pr-4">{stars}</div>
+    );
+  };
+
   return (
     <div className="box-shadow rounded-xl p-2 w-full h-full flex flex-col justify-between">
       <div className="flex items-center justify-center">
         <img
-          src={product.img}
-          alt={product.name}
+          src={product?.img}
+          alt={product?.name || "Product"}
           className="rounded-xl p-4 h-56 w-56 hover:p-0 transition"
         />
       </div>
 
       <div>
-        <h1 className="text-xl py-2">{product.name || "Product"}</h1>
+        <h1 className="text-xl py-2">{product?.name || "Product"}</h1>
         <div className="flex flex-wrap justify-between">
-          <div className="flex text-yellow-500 items-center pr-4">
-            <span className="pr-2">{product.stars || 0}.0</span>
-            {Array.from({ length: 5 }, (element, index) => {
-              return (
-                <span key={index} className=" text-xl">
-                  {index + 1 > product.stars ? (
-                    <RiStarSLine />
-                  ) : (
-                    <RiStarSFill />
-                  )}
-                </span>
-              );
-            })}
-          </div>
-          <span className="text-blue-500">{product.ratings || 0} ratings</span>
+          {renderStars()}
+          <span className="text-blue-500">{product?.ratings || 0} ratings</span>
         </div>
         <div className="flex flex-wrap gap-2 py-2">
-          <p>₹{product.minPrice || 0}</p>
+          <p>₹{product?.minPrice || 0}</p>
           <p>-</p>
-          <p>₹{product.maxPrice || 0}</p>
+          <p>₹{product?.maxPrice || 0}</p>
         </div>
       </div>
-      
-      <Link to={`/products/${product.id}`}>
+
+      <Link to={`/products/${product?.id}`}>
         <button className="bg-yellow-500 rounded w-full h-10 hover:text-xl transition">
           Buy Now
         </button>

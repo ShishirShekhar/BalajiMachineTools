@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductDesc from "./pages/ProductDesc";
@@ -12,15 +13,22 @@ function App() {
   return (
     <div>
       <Router>
+        {/* Navigation Bar */}
         <Nav />
+
+        {/* Routing Configuration */}
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/products" element={<Products />} />
-          <Route exact path="/products/:id" element={<ProductDesc />} />
-          <Route exact path="/contact" element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDesc />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+
+        {/* Footer Section */}
         <Footer />
+
+        {/* Mobile Navigation */}
         <MobileNav />
       </Router>
     </div>

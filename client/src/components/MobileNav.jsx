@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IoHomeOutline, IoHomeSharp } from "react-icons/io5";
 import { IoSettingsOutline, IoSettingsSharp } from "react-icons/io5";
@@ -10,65 +10,63 @@ const MobileNav = () => {
   const page = location.pathname;
 
   useEffect(() => {
-
     const updateIcon = () => {
-      if (page === "/") {
-        setActive("home");
-      } else if (page === "/products") {
-        setActive("products");
-      } else if (page === "/contact") {
-        setActive("contact");
-      } else {
-        setActive("");
+      switch (page) {
+        case "/":
+          setActive("home");
+          break;
+        case "/products":
+          setActive("products");
+          break;
+        case "/contact":
+          setActive("contact");
+          break;
+        default:
+          setActive("");
+          break;
       }
     };
 
     updateIcon();
   }, [page]);
 
+  const navItems = [
+    {
+      path: "/",
+      iconActive: <IoHomeSharp className="text-2xl" />,
+      iconInactive: <IoHomeOutline className="text-2xl" />,
+      label: "Home",
+    },
+    {
+      path: "/products",
+      iconActive: <IoSettingsSharp className="text-2xl" />,
+      iconInactive: <IoSettingsOutline className="text-2xl" />,
+      label: "Products",
+    },
+    {
+      path: "/contact",
+      iconActive: <RiCustomerServiceFill className="text-2xl" />,
+      iconInactive: <RiCustomerServiceLine className="text-2xl" />,
+      label: "Contact",
+    },
+  ];
+
   return (
     <div className="fixed bottom-0 bg-white w-full flex md:hidden justify-evenly border-t-2">
-      <Link to={"/"}>
-        {active === "home" ? (
-          <div className="flex flex-col items-center py-2 px-4 text-blue-500">
-            <IoHomeSharp className="text-2xl" />
-            <p className="text-sm">Home</p>
+      {navItems.map((item, index) => (
+        <Link key={index} to={item.path}>
+          <div
+            className={`flex flex-col items-center py-2 px-4 ${
+              active === item.label.toLowerCase() ? "text-blue-500" : ""
+            }`}
+          >
+            {active === item.label.toLowerCase()
+              ? item.iconActive
+              : item.iconInactive}
+            <p className="text-sm">{item.label}</p>
           </div>
-        ) : (
-          <div className="flex flex-col items-center py-2 px-4">
-            <IoHomeOutline className="text-2xl" />
-            <p className="text-sm">Home</p>
-          </div>
-        )}
-      </Link>
-
-      <Link to={"/products"}>
-        {active === "products" ? (
-          <div className="flex flex-col items-center py-2 px-4 text-blue-500">
-            <IoSettingsSharp className="text-2xl" />
-            <p className="text-sm">Products</p>
-          </div>
-        ) : (
-          <div className="flex flex-col items-center py-2 px-4">
-            <IoSettingsOutline className="text-2xl" />
-            <p className="text-sm">Products</p>
-          </div>
-        )}
-      </Link>
-
-      <Link to={"/contact"}>
-        {active === "contact" ? (
-          <div className="flex flex-col items-center py-2 px-4 text-blue-500">
-            <RiCustomerServiceFill className="text-2xl" />
-            <p className="text-sm">Contact</p>
-          </div>
-        ) : (
-          <div className="flex flex-col items-center py-2 px-4">
-            <RiCustomerServiceLine className="text-2xl" />
-            <p className="text-sm">Contact</p>
-          </div>
-        )}
-      </Link>
+        </Link>
+      ))}
     </div>
   );
 };

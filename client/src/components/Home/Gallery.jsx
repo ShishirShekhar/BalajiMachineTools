@@ -1,6 +1,6 @@
 import React from "react";
-import { products } from "../../constants/products";
 import { Link } from "react-router-dom";
+import { products } from "../../constants/products";
 
 const Gallery = () => {
   return (

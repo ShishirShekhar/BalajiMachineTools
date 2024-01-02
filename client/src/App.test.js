@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test('renders "Learn React" link in the App component', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  // Use a more explicit query for the link
+  const learnReactLink = screen.getByRole("link", { name: /learn react/i });
+
+  // Assert that the link is in the document
+  expect(learnReactLink).toBeInTheDocument();
 });

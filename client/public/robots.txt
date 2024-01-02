@@ -1,3 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /private/  # Disallow crawling of private content
+Disallow: /restricted/  # Disallow crawling of restricted content
+
+User-agent: Googlebot
+Allow: /public/  # Allow Googlebot to crawl public content
+Disallow: /private/  # Disallow crawling of private content
