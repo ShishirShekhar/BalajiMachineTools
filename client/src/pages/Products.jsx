@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/Product/ProductCard";
 import { products } from "../constants/products";
 import { categories } from "../constants/products";
+import { FaSearch } from "react-icons/fa";
 
 const Products = () => {
   const [searchProducts, setSearchProducts] = useState(products);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [menu, setMenu] = useState(false);
 
   useEffect(() => {
     const handleSearch = () => {
@@ -65,82 +65,51 @@ const Products = () => {
   };
 
   const handleRadioChange = (e) => {
-    setSelectedCategory(e.target.value);
-  };
-
-  const handleMenu = () => {
-    setMenu((prev) => !prev);
+    e.target.value === selectedCategory
+      ? setSelectedCategory("")
+      : setSelectedCategory(e.target.value);
   };
 
   return (
-    <div className="min-h-screen py-10">
-      <div className="flex gap-2">
-        <div className="hidden md:block box-shadow px-5 pb-10">
-          <h2 className="text-2xl pb-2">Select Category</h2>
-          <div>
-            {categories.map((category) => (
-              <p className="w-56" key={category}>
-                <input
-                  type="radio"
-                  name={category}
-                  id={category}
-                  value={category}
-                  key={category}
-                  checked={selectedCategory === category}
-                  onChange={handleRadioChange}
-                />
-                <label htmlFor={category} className="px-2">
-                  {category}
-                </label>
-              </p>
-            ))}
-          </div>
+    <div className="min-h-screen">
+      <div className="w-full bg-blue-500 pb-5 px-5">
+        <div className="relative">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search product by their name or category"
+            className="rounded focus:outline-none w-full px-5 py-2"
+            value={search}
+            onChange={handleChange}
+          />
+          <button className="bg-yellow-500 h-full absolute top-0 right-0 rounded flex items-center px-4">
+            <FaSearch />
+          </button>
         </div>
-        <div className="w-full">
-          <div className="flex justify-center items-center px-5 w-full">
-            <input
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Search product by their name or category"
-              className="box-shadow rounded focus:outline-none w-full px-2 py-4"
-              value={search}
-              onChange={handleChange}
-            />
+      </div>
+
+      <div className="flex gap-2 p-2 whitespace-nowrap overflow-scroll border-b-2">
+        {categories.map((category) => (
+          <button
+            className={`border border-black shadow rounded px-2 ${
+              category === selectedCategory ? "bg-blue-500 text-white" : ""
+            }`}
+            value={category}
+            key={category}
+            onClick={handleRadioChange}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap justify-evenly gap-10 py-10 px-5 md:px-10">
+        {searchProducts.map((product) => (
+          <div className="px-4 md:px-0 w-full md:w-64" key={product.id}>
+            <ProductCard product={product} key={product.id} />
           </div>
-          <div className="block md:hidden p-5 w-full">
-            <div className="box-shadow rounded-xl px-5">
-              <h2 className="text-xl pb-2" onClick={handleMenu}>
-                Select Category
-              </h2>
-              <div className={!menu ? "hidden" : ""}>
-                {categories.map((category) => (
-                  <p className="md:w-56" key={category}>
-                    <input
-                      type="radio"
-                      name={category}
-                      id={category}
-                      value={category}
-                      key={category}
-                      checked={selectedCategory === category}
-                      onChange={handleRadioChange}
-                    />
-                    <label htmlFor={category} className="px-2">
-                      {category}
-                    </label>
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-wrap justify-evenly gap-10 py-10">
-            {searchProducts.map((product) => (
-              <div className="px-4 md:px-0 w-full md:w-64" key={product.id}>
-                <ProductCard product={product} key={product.id} />
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
