@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
 
       <div className="flex flex-col gap-5 py-5 md:py-0 md:px-10 md:w-1/2 justify-evenly">
         <div>
-          <Link to={"/"}>
+          <Link to={"/products"}>
             <p className=" text-blue-500">More products</p>
           </Link>
           <h1 className="text-4xl">{product?.name || "Product"}</h1>
