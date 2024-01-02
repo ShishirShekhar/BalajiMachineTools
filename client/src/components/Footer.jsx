@@ -81,14 +81,22 @@ const Footer = () => {
               </div>
             </a>
 
-            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shishir-shekhar">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.linkedin.com/in/shishir-shekhar"
+            >
               <div className="flex items-center">
                 <img src={linkedin} alt="linkedin" className="w-8" />
                 <p>Linkedin</p>
               </div>
             </a>
 
-            <a target="_blank" rel="noreferrer" href="https://www.twitter.com/ShishirShekhar0">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.twitter.com/ShishirShekhar0"
+            >
               <div className="flex items-center">
                 <img src={twitter} alt="twitter" className="w-8" />
                 <p>Twitter</p>
@@ -107,6 +115,17 @@ const Footer = () => {
             </a>
           </div>
         </div>
+      </div>
+
+      <div className="flex flex-col items-center pb-2">
+        <a
+          href="https://www.linkedin.com/in/shishir-shekhar/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Made by <span className="underline">Shishir Shekhar</span>
+        </a>
+        <p>© Copyright Balaji Machine Tools {new Date().getFullYear()}</p>
       </div>
     </div>
   );
