@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="rounded-xl md:w-1/2 shadow-xl">
+      <div className="rounded-xl md:w-1/2 box-shadow">
         <img
           src={product?.img || ""}
           alt={product?.name || "Product"}

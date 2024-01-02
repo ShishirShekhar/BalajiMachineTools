@@ -75,7 +75,7 @@ const Products = () => {
   return (
     <div className="min-h-screen py-10">
       <div className="flex gap-2">
-        <div className="hidden md:block shadow-xl px-5 pb-10">
+        <div className="hidden md:block box-shadow px-5 pb-10">
           <h2 className="text-2xl pb-2">Select Category</h2>
           <div>
             {categories.map((category) => (
@@ -103,13 +103,13 @@ const Products = () => {
               name="search"
               id="search"
               placeholder="Search product by their name or category"
-              className="shadow-xl rounded focus:outline-none w-full px-2 py-4"
+              className="box-shadow rounded focus:outline-none w-full px-2 py-4"
               value={search}
               onChange={handleChange}
             />
           </div>
           <div className="block md:hidden p-5 w-full">
-            <div className="shadow-xl rounded-xl px-5">
+            <div className="box-shadow rounded-xl px-5">
               <h2 className="text-xl pb-2" onClick={handleMenu}>
                 Select Category
               </h2>

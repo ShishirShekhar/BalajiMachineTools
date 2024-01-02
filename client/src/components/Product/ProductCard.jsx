@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ProductCard = (props) => {
   const product = props.product;
   return (
-    <div className="shadow-xl rounded-xl p-2 w-full h-full flex flex-col justify-between">
+    <div className="box-shadow rounded-xl p-2 w-full h-full flex flex-col justify-between">
       <div className="flex items-center justify-center">
         <img
           src={product.img}

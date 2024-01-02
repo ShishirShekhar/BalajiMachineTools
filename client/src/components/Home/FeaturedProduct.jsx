@@ -8,7 +8,7 @@ const FeaturedProduct = (props) => {
         {props.products.map((product, index) => {
           return (
             <div
-              className="featured-product w-40 h-40 md:w-64 md:h-64 shadow-xl rounded-xl relative overflow-hidden bg-white"
+              className="featured-product w-40 h-40 md:w-64 md:h-64 box-shadow rounded-xl relative overflow-hidden bg-white"
               key={product.id}
             >
               <Link to={`/products/${product.id}`}>
