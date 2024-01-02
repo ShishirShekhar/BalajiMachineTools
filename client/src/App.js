@@ -6,6 +6,7 @@ import Products from "./pages/Products";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
