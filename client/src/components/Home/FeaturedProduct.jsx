@@ -7,11 +7,11 @@ const FeaturedProduct = (props) => {
       <div className="flex flex-wrap gap-5 justify-around py-10">
         {props.products.map((product, index) => {
           return (
-            <Link to={`/products/${product.id}`}>
-              <div
-                className="featured-product w-40 h-40 md:w-64 md:h-64 shadow-xl rounded-xl relative overflow-hidden bg-white"
-                key={product.id}
-              >
+            <div
+              className="featured-product w-40 h-40 md:w-64 md:h-64 shadow-xl rounded-xl relative overflow-hidden bg-white"
+              key={product.id}
+            >
+              <Link to={`/products/${product.id}`}>
                 <img
                   src={product.img}
                   alt={product.name}
@@ -22,8 +22,8 @@ const FeaturedProduct = (props) => {
                     {product.name}
                   </p>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           );
         })}
       </div>
