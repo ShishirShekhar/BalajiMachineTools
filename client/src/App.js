@@ -5,6 +5,7 @@ import ProductDesc from "./pages/ProductDesc";
 import Products from "./pages/Products";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDesc />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
