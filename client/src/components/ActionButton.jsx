@@ -43,59 +43,64 @@ const ActionButton = ({
   }
 
   const actionBlock = () => {
-    if (action === "call") {
-      return (
-        <a href={`tel:0${value}`}>
+    switch (action) {
+      case "call":
+        return (
+          <a href={`tel:0${value}`}>
+            <button
+              className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
+            >
+              {text}
+            </button>
+          </a>
+        );
+
+      case "mail":
+        return (
+          <a href={`mailto:${value}`}>
+            <button
+              className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
+            >
+              {text}
+            </button>
+          </a>
+        );
+
+      case "whatsapp":
+        return (
+          <a
+            href={`https://wa.me/8437680240?text=${value}`}
+            target="_blank"
+            rel="noreferrer"
+            className="w-full"
+          >
+            <button
+              className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
+            >
+              {text}
+            </button>
+          </a>
+        );
+
+      case "link":
+        return (
+          <Link to={value}>
+            <button
+              className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
+            >
+              {text}
+            </button>
+          </Link>
+        );
+
+      default:
+        return (
           <button
-            className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
+            className={`w-full bg-blue-500 rounded-lg text-white text-${textSize} p-2 flex items-center justify-center transition hover:bg-blue-700`}
           >
             {text}
           </button>
-        </a>
-      );
-    } else if (action === "mail") {
-      return (
-        <a href={`mailto:${value}`}>
-          <button
-            className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
-          >
-            {text}
-          </button>
-        </a>
-      );
-    } else if (action === "whatsapp") {
-      return (
-        <a
-          href={`https://wa.me/8437680240?text=${value}`}
-          target="_blank"
-          rel="noreferrer"
-          className="w-full"
-        >
-          <button
-            className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
-          >
-            {text}
-          </button>
-        </a>
-      );
-    } else if (action === "link") {
-      return (
-        <Link to={value}>
-          <button
-            className={`w-full rounded-lg flex items-center justify-center transition hover:bg-blue-700 hover:text-white ${features} ${textSize} ${buttonSize}`}
-          >
-            {text}
-          </button>
-        </Link>
-      );
-    } else {
-      return (
-        <button
-          className={`w-full bg-blue-500 rounded-lg text-white text-${textSize} p-2 flex items-center justify-center transition hover:bg-blue-700`}
-        >
-          {text}
-        </button>
-      );
+        );
     }
   };
 
