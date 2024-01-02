@@ -3,10 +3,9 @@ import { RiStarSLine, RiStarSFill } from "react-icons/ri";
 import ActionButton from "../ActionButton";
 
 const ProductCard = ({ product }) => {
-  let message = `Hello, I visited this website https://smtlathemachine.vercel.app/ , and I would like to know more about ${
-    product?.name || ""
-  }`;
-  message = message.replace(/ /g, "%20");
+  let message = `Hello, I visited this website ${
+    window.location.href
+  } , and I would like to know more about ${product?.name || ""}`;
 
   return (
     <div className="flex flex-col md:flex-row">
