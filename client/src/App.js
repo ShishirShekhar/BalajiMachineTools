@@ -1,5 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import ProductDesc from "./pages/ProductDesc";
 import Products from "./pages/Products";
@@ -12,10 +17,21 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import MobileNav from "./components/MobileNav";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   return (
     <div>
       <Router>
+        <ScrollToTop />
         {/* Navigation Bar */}
         <Nav />
 
