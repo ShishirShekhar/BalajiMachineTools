@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Analytics } from "@vercel/analytics/react";
 
 // Get the root element to render the app
 const rootElement = document.getElementById('root');
@@ -11,6 +12,7 @@ const rootElement = document.getElementById('root');
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <App />
+    <Analytics />
   </React.StrictMode>
 );
 
