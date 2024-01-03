@@ -13,7 +13,7 @@ const Hero = () => {
             type="primary"
             text="Enquire Now"
             action="link"
-            value="/products"
+            value="/contact"
             size="medium"
           />
         </div>
