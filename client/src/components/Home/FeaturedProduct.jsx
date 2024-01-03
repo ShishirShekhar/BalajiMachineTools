@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
         <img
           src={product.img}
           alt={product.name}
-          className="w-full h-full absolute p-4"
+          className="w-full h-full absolute md:p-4"
         />
         <div className="overlay transition absolute -bottom-full w-full h-full bg-blue-500 bg-opacity-90">
           <p className="text text-lg text-center absolute top-1/2 left-1/2 text-white w-full px-4 font-bold">
