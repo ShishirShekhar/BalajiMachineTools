@@ -31,6 +31,15 @@ const Contact = () => {
               />
               <ActionButton
                 type="secondary"
+                text="WhatsApp"
+                action="whatsapp"
+                value={
+                  "Hello, I recently visited the Balaji Machine Tools website and had a question. Could you please help me with it?"
+                }
+                size="medium"
+              />
+              <ActionButton
+                type="secondary"
                 text="Email Us"
                 action="mail"
                 value="salesbalajimachines@gmail.com"
