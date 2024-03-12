@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import MobileNav from "./components/MobileNav";
+import WhatsApp from "./components/WhatsApp";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -52,6 +53,9 @@ function App() {
 
         {/* Mobile Navigation */}
         <MobileNav />
+
+        {/* WhatApp */}
+        <WhatsApp />
       </Router>
     </div>
   );
