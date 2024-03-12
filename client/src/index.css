@@ -77,3 +77,30 @@ body::-webkit-scrollbar {
   background: gray;
   border-radius: 10px;
 }
+
+/* Whatsapp */
+
+.pulse {
+  @apply w-14 h-14 bg-green-500 rounded-full;
+}
+
+.pulse::after,
+.pulse::before {
+  @apply absolute w-full h-full bg-green-500 opacity-75 rounded-full;
+  content: "";
+}
+
+.pulse::before {
+  animation: pulse 2s ease-out infinite;
+}
+
+.pulse::after {
+  animation: pulse 2s 1s ease-out infinite;
+}
+
+@keyframes pulse {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
