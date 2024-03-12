@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           <div className="flex sm:block flex-col justify-center items-center">
             <h1 className="text-2xl">Contact Details</h1>
-            <div className="py-2 flex flex-col justify-evenly items-center sm:items-start h-44">
+            <div className="py-2 flex flex-col justify-evenly items-center sm:items-start min-h-44">
               <p className="text-xl">Address:</p>
               <p>
                 G.T Road, Batala <br />
