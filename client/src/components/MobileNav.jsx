@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { IoHomeOutline, IoHomeSharp } from "react-icons/io5";
-import { IoSettingsOutline, IoSettingsSharp } from "react-icons/io5";
-import { RiCustomerServiceLine, RiCustomerServiceFill } from "react-icons/ri";
+import { navItems } from "../constants/navItems";
 
 const MobileNav = () => {
   const [active, setActive] = useState("home");
@@ -30,26 +28,6 @@ const MobileNav = () => {
     updateIcon();
   }, [page]);
 
-  const navItems = [
-    {
-      path: "/",
-      iconActive: <IoHomeSharp className="text-2xl" />,
-      iconInactive: <IoHomeOutline className="text-2xl" />,
-      label: "Home",
-    },
-    {
-      path: "/products",
-      iconActive: <IoSettingsSharp className="text-2xl" />,
-      iconInactive: <IoSettingsOutline className="text-2xl" />,
-      label: "Products",
-    },
-    {
-      path: "/contact",
-      iconActive: <RiCustomerServiceFill className="text-2xl" />,
-      iconInactive: <RiCustomerServiceLine className="text-2xl" />,
-      label: "Contact",
-    },
-  ];
 
   return (
     <div className="fixed bottom-0 bg-white w-full flex md:hidden justify-evenly border-t-2">
