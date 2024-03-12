@@ -32,6 +32,9 @@ const Footer = () => {
               <a href="tel:+918437680240">
                 <p>8437680240</p>
               </a>
+              <a href="tel:+919814771618">
+                <p>9814771618</p>
+              </a>
               <p className="text-xl">Email:</p>
               <a href="mailto:salesbalajimachines@gmail.com">
                 <p>salesbalajimachines@gmail.com</p>
