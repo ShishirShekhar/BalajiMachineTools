@@ -1,11 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/white_logo.png";
-import facebook from "../images/facebook.png";
-import instagram from "../images/instagram.png";
-import linkedin from "../images/linkedin.png";
-import twitter from "../images/twitter.png";
-import whatsapp from "../images/whatsapp.png";
+import { social } from "../constants/social";
 
 const Footer = () => {
   return (
@@ -67,33 +63,7 @@ const Footer = () => {
           <div>
             <h1 className="text-2xl">Connect</h1>
             <div className="py-2 flex flex-col justify-evenly h-44">
-              {[
-                {
-                  link: "https://www.facebook.com/ShishirShekhar0/",
-                  image: facebook,
-                  alt: "Facebook",
-                },
-                {
-                  link: "https://www.instagram.com/sol_shishir",
-                  image: instagram,
-                  alt: "Instagram",
-                },
-                {
-                  link: "https://www.linkedin.com/in/shishir-shekhar",
-                  image: linkedin,
-                  alt: "Linkedin",
-                },
-                {
-                  link: "https://www.twitter.com/ShishirShekhar0",
-                  image: twitter,
-                  alt: "Twitter",
-                },
-                {
-                  link: "https://wa.me/+918437680240",
-                  image: whatsapp,
-                  alt: "Whatsapp",
-                },
-              ].map((item, index) => (
+              {social.map((item, index) => (
                 <a
                   key={index}
                   target="_blank"
