@@ -19,6 +19,9 @@ const MobileNav = () => {
         case "/contact":
           setActive("contact");
           break;
+        case "/gallery":
+          setActive("gallery");
+          break;
         default:
           setActive("");
           break;
