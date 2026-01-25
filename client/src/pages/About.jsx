@@ -50,7 +50,7 @@ const About = () => {
       </Section>
 
       <Section className="-mt-10 sm:-mt-14 md:-mt-16" padding="md" maxWidth="max-w-6xl">
-        <Grid cols={{ base: 2, md: 4 }} gap="4">
+        <Grid cols={{ base: 2, sm: 2, md: 4, lg: 4 }} gap="4">
           {stats.map((stat) => (
             <Card
               key={stat.label}
