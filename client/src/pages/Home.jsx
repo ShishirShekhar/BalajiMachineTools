@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Hero, HomeAbout, HomeGallery, FeaturedProduct } from "../components/home";
+import { Hero, HomeAbout, HomeGallery, FeaturedProduct } from "../components/Home";
 import { useProducts } from "../lib/hooks";
 
 const Home = () => {
