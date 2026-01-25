@@ -1,9 +1,16 @@
 import React, { useMemo } from "react";
 import { Hero, HomeAbout, HomeGallery, FeaturedProduct } from "../components/Home";
-import { useProducts } from "../lib/hooks";
+import { useProducts, useMetadata } from "../lib/hooks";
 
 const Home = () => {
   const { products } = useProducts();
+
+  useMetadata({
+    title: "Home",
+    description:
+      "Welcome to Balaji Machine Tools - Your trusted source for quality industrial machinery and equipment",
+    url: "https://balijimachinetools.com/",
+  });
 
   // Create featured product sets from fetched data
   const { popularProducts, bestProducts, featuredProducts } = useMemo(() => {

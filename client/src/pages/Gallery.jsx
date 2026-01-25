@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Grid, Section, Stack } from "../components/ui";
-import { useProducts } from "../lib/hooks";
+import { useProducts, useMetadata } from "../lib/hooks";
 
 const Gallery = () => {
+  useMetadata({
+    title: "Gallery",
+    description: "View our collection of industrial machinery and equipment in action",
+    url: "https://balijimachinetools.com/gallery",
+  });
+
   const [selectedImage, setSelectedImage] = useState(null);
   const { products, loading, error } = useProducts();
 

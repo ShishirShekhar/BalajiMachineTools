@@ -1,6 +1,13 @@
 import { Section, Stack } from "../components/ui";
+import { useMetadata } from "../lib/hooks";
 
 const PrivacyPolicy = () => {
+  useMetadata({
+    title: "Privacy Policy",
+    description: "Read our privacy policy to understand how we protect your personal information",
+    url: "https://balijimachinetools.com/privacy",
+  });
+
   return (
     <Section
       className="bg-linear-to-b from-blue-500 via-blue-500 to-blue-600 text-white"

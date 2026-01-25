@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import { Button, Section } from "../components/ui";
+import { useMetadata } from "../lib/hooks";
 
 const Contact = () => {
+  useMetadata({
+    title: "Contact Us",
+    description:
+      "Get in touch with Balaji Machine Tools - We're here to help with your industrial machinery needs",
+    url: "https://balijimachinetools.com/contact",
+  });
+
   const WHATSAPP_NUMBER = "+918437680240";
   const [formData, setFormData] = useState({
     name: "",

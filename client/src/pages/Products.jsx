@@ -3,7 +3,7 @@ import { FaSearch, FaStar, FaTimes } from "react-icons/fa";
 import { FaSliders } from "react-icons/fa6";
 import { ProductCard } from "../components/products";
 import { Section, Stack } from "../components/ui";
-import { useProductFilter, useProducts, useCategories } from "../lib/hooks";
+import { useProductFilter, useProducts, useCategories, useMetadata } from "../lib/hooks";
 
 const PRICE_OPTIONS = [
   { id: "p1", label: "Under ₹10L", min: 0, max: 1_000_000 },
@@ -68,6 +68,12 @@ const Products = () => {
     useProductFilter(products);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
+
+  useMetadata({
+    title: "Products",
+    description: "Browse our extensive range of quality industrial machinery and machine tools",
+    url: "https://balijimachinetools.com/products",
+  });
   const [sortBy, setSortBy] = useState("relevance");
   const [priceFilter, setPriceFilter] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");

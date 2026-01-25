@@ -1,8 +1,15 @@
 import { FaHome, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Section, Stack } from "../components/ui";
+import { useMetadata } from "../lib/hooks";
 
 const NotFound = () => {
+  useMetadata({
+    title: "Page Not Found",
+    description: "The page you're looking for could not be found",
+    url: "https://balijimachinetools.com/404",
+  });
+
   return (
     <Section
       className="u-bg-page flex min-h-screen items-center text-center"

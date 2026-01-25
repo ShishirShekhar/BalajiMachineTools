@@ -2,11 +2,22 @@ import { FaArrowLeft, FaExclamationCircle } from "react-icons/fa";
 import { useParams, Link } from "react-router-dom";
 import { ProductDetail, Table } from "../components/products";
 import { Section, Stack } from "../components/ui";
-import { useProductById } from "../lib/hooks";
+import { useProductById, useMetadata } from "../lib/hooks";
+import { getProductMetadata } from "../lib/utils";
 
 const Product = () => {
   const { id } = useParams();
   const { product, loading, error } = useProductById(id);
+
+  useMetadata(
+    product
+      ? getProductMetadata(product)
+      : {
+          title: "Product Details",
+          description: "View detailed specifications and information about our products",
+          url: `https://balijimachinetools.com/products/${id}`,
+        }
+  );
 
   // Loading state
   if (loading) {

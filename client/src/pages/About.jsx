@@ -1,7 +1,15 @@
 import { FaAward, FaCheckCircle, FaHandshake, FaLightbulb, FaUsers } from "react-icons/fa";
 import { Card, Grid, Section, Stack } from "../components/ui";
+import { useMetadata } from "../lib/hooks";
 
 const About = () => {
+  useMetadata({
+    title: "About Us",
+    description:
+      "Learn about Balaji Machine Tools - 55+ years of excellence in industrial machinery and engineering solutions",
+    url: "https://balijimachinetools.com/about",
+  });
+
   const stats = [
     { label: "Years of Excellence", value: "55+", icon: <FaAward /> },
     { label: "Happy Clients", value: "1000+", icon: <FaUsers /> },
