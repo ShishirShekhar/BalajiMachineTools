@@ -1,1 +1,12 @@
 .DS_Store
+server
+node_modules
+dist
+.env
+.vscode
+.idea
+*.log
+*.tmp
+coverage
+*.bak
+*.swp

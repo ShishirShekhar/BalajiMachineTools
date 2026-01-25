@@ -1,41 +1,96 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { products } from "../constants/products";
-import ProductDetail from "../components/ProductDesc/ProductDetail";
-import Table from "../components/ProductDesc/Table";
+import { FaArrowLeft, FaExclamationCircle } from "react-icons/fa";
+import { useParams, Link } from "react-router-dom";
+import { ProductDetail, Table } from "../components/products";
+import { Section, Stack } from "../components/ui";
+import { useProductById } from "../lib/hooks";
 
 const Product = () => {
   const { id } = useParams();
-  const product = products.find((product) => product.id === id);
+  const { product, loading, error } = useProductById(id);
 
-  if (!product) {
+  // Loading state
+  if (loading) {
     return (
-      <div className="flex items-center justify-center h-[30rem] md:h-[32rem]">
-        <h1 className="text-5xl md:text-7xl font-bold text-center">
-          Product Not Found
-        </h1>
-      </div>
+      <Section className="u-bg-page flex min-h-screen items-center justify-center text-center">
+        <Stack align="center" gap="3">
+          <div className="h-16 w-16 animate-spin rounded-full border-t-4 border-b-4 border-blue-600" />
+          <p className="text-lg text-gray-600">Loading product details...</p>
+        </Stack>
+      </Section>
+    );
+  }
+
+  // Error state
+  if (error || !product) {
+    return (
+      <Section className="u-bg-page flex min-h-screen items-center justify-center text-center">
+        <Stack align="center" gap="4">
+          <FaExclamationCircle className="text-6xl text-blue-500" />
+          <h1 className="text-4xl font-bold text-gray-800 md:text-5xl">Product Not Found</h1>
+          <p className="max-w-2xl text-lg text-gray-600">
+            {error || "The product you're looking for doesn't exist or has been removed."}
+          </p>
+          <Link to="/products">
+            <button className="u-btn-primary flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300">
+              <FaArrowLeft />
+              Back to Products
+            </button>
+          </Link>
+        </Stack>
+      </Section>
     );
   }
 
   return (
-    <div className="p-5 md:p-10">
+    <Section className="u-bg-page min-h-screen" maxWidth="max-w-7xl">
+      {/* Breadcrumb */}
+      <nav className="mb-6" aria-label="Breadcrumb">
+        <ol className="flex items-center gap-2 text-sm text-gray-600">
+          <li>
+            <Link to="/" className="transition-colors hover:text-blue-600">
+              Home
+            </Link>
+          </li>
+          <li>/</li>
+          <li>
+            <Link to="/products" className="transition-colors hover:text-blue-600">
+              Products
+            </Link>
+          </li>
+          <li>/</li>
+          <li className="font-semibold text-blue-600">{product.name}</li>
+        </ol>
+      </nav>
+
       <ProductDetail product={product} />
 
-      <div className="py-5 pt-10">
-        <h1 className="text-2xl pb-2">Technical Specification:</h1>
-        <div className="overflow-scroll">
-          {Object.keys(product.specifications).length ? (
-            <Table product={product} />
-          ) : (
-            <div>
-              <p>This product's technical specifications are not available.</p>
-              <p>Please contact us for more information.</p>
-            </div>
-          )}
+      <div className="mt-10">
+        <div className="u-card md:p-8">
+          <h2 className="mb-6 border-b pb-4 text-2xl font-bold text-gray-800 md:text-3xl">
+            Technical Specifications
+          </h2>
+          <div className="overflow-x-auto">
+            {Object.keys(product.specifications).length ? (
+              <Table product={product} />
+            ) : (
+              <div className="py-10 text-center">
+                <FaExclamationCircle className="mx-auto mb-4 text-4xl text-gray-300" />
+                <p className="mb-2 text-lg text-gray-600">
+                  Technical specifications are not available for this product.
+                </p>
+                <p className="text-gray-500">
+                  Please{" "}
+                  <Link to="/contact" className="text-blue-600 hover:underline">
+                    contact us
+                  </Link>{" "}
+                  for more information.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </Section>
   );
 };
 

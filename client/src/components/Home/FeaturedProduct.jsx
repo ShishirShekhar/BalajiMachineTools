@@ -1,35 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { ProductCard } from "../products";
+import { Grid, Section, Stack } from "../ui";
 
-const FeaturedProducts = ({ title, products }) => {
+const FeaturedProducts = ({ title, products, variant = "light", className = "" }) => {
+  const isDark = variant === "dark";
+
   return (
-    <div className="py-10 px-5 md:px-10 text-4xl featured-products">
-      <h1 className="text-center font-semibold">{title}</h1>
-      <div className="flex flex-wrap gap-5 justify-around py-10">
+    <Section padding="xl" className={`${isDark ? "text-white" : ""} ${className}`.trim()}>
+      <Stack align="center" gap="3" className="text-center">
+        <h1
+          className={`u-section-title ${
+            isDark ? "text-white drop-shadow-sm" : "u-text-primary-gradient"
+          }`}
+        >
+          {title}
+        </h1>
+        <div
+          className={`mx-auto h-1 w-20 rounded-full sm:w-24 ${
+            isDark ? "u-divider-white shadow-sm" : "u-divider-primary"
+          }`}
+        />
+      </Stack>
+
+      <Grid cols={{ base: 1, sm: 2, md: 3, lg: 4 }} gap="6" className="mt-10">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
-      </div>
-    </div>
-  );
-};
-
-const ProductCard = ({ product }) => {
-  return (
-    <div className="featured-product w-40 h-40 md:w-64 md:h-64 box-shadow rounded-xl relative overflow-hidden bg-white">
-      <Link to={`/products/${product.id}`}>
-        <img
-          src={product.img}
-          alt={product.name}
-          className="w-full h-full absolute md:p-4"
-        />
-        <div className="overlay transition absolute -bottom-full w-full h-full bg-blue-500 bg-opacity-90">
-          <p className="text text-lg text-center absolute top-1/2 left-1/2 text-white w-full px-4 font-bold">
-            {product.name}
-          </p>
-        </div>
-      </Link>
-    </div>
+      </Grid>
+    </Section>
   );
 };
 

@@ -1,106 +1,486 @@
 /* Tailwind CSS */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Global Styling */
-
-html {
-  scroll-behavior: smooth;
+/* Utility classes (plain CSS using Tailwind @apply) */
+/* Background gradients */
+.u-bg-primary-gradient {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
 }
 
-/* Hero Section */
+.u-bg-primary-gradient-br {
+  background: linear-gradient(to bottom right, #2563eb, #3b82f6, #2563eb);
+}
+
+.u-bg-page {
+  background: linear-gradient(to bottom, #f9fafb, #ffffff);
+}
+
+.u-text-primary-gradient {
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Cards */
+.u-card {
+  @apply rounded-2xl bg-white p-6 shadow-lg;
+}
+
+.u-card-hover {
+  @apply overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+}
+
+/* Hover elevate effect */
+.u-hover-lift {
+  @apply transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+}
+
+/* Badges */
+.u-badge-blue {
+  @apply rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-600 sm:px-3 sm:text-sm;
+}
+
+/* Section titles and subtitles */
+.u-section-title {
+  @apply text-3xl font-bold sm:text-4xl md:text-5xl;
+}
+
+.u-section-subtitle {
+  @apply text-sm text-gray-600 sm:text-base md:text-lg;
+}
+
+/* Dividers */
+.u-divider-primary {
+  @apply mx-auto h-1 w-20 rounded-full sm:w-24;
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+}
+
+.u-divider-white {
+  @apply mx-auto h-1 w-20 rounded-full sm:w-24;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Primary button gradient (for one-off buttons outside ActionButton) */
+.u-btn-primary {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  color: white;
+}
+
+.u-btn-primary:hover {
+  background: linear-gradient(to right, #1d4ed8, #2563eb);
+}
+
+textarea,
+select::placeholder {
+  color: #6b7280;
+}
+
+:where(input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="number"],
+  textarea,
+  select):focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow:
+    0 0 0 4px rgba(96, 165, 250, 0.2),
+    0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+:where(textarea) {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* ============================================================================
+   HERO SECTION - Base (Mobile)
+   ============================================================================ */
 
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./images/hero.jpeg");
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.6), rgba(0, 0, 0, 0.7)), url("./images/hero.jpeg");
   background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+  pointer-events: none;
 }
 
 /* Featured Products */
 
+.featured-products {
+  animation: fadeInUp 0.6s ease-out;
+}
 
 /* Featured Product Hover Effect */
+
+.featured-product {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-product:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.featured-product:hover .overlay {
+  @apply bottom-0;
+}
+
+/* ============================================================================
+   FEATURED PRODUCTS - Base (Mobile)
+   ============================================================================ */
+
+.featured-products {
+  animation: fadeInUp 0.6s ease-out;
+  padding: 1.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .featured-products {
+    padding: 2rem;
+  }
+}
+
+/* ============================================================================
+   FEATURED PRODUCT CARD - Base (Mobile)
+   ============================================================================ */
+
+.featured-product {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-product:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
 
 .featured-product:hover .overlay {
   @apply bottom-0;
 }
 
 .featured-product .text {
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
-/* Transitions */
+.featured-product img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: auto;
+  max-width: 14rem;
+}
+
+.featured-product:hover img {
+  transform: scale(1.1);
+}
+
+/* ============================================================================
+   TRANSITIONS & EFFECTS - Base (Mobile)
+   ============================================================================ */
 
 .transition {
   transition: 0.5s ease;
 }
 
-/* Hamburger Menu Option Styling */
+.box-shadow {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.box-shadow:hover {
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.15),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ============================================================================
+   HAMBURGER MENU - Base (Mobile)
+   ============================================================================ */
 
 .hamburger-option {
   padding: 1.5rem;
+  width: 100%;
 }
 
-/* Box Shadow Effect */
-
-.box-shadow {
-  box-shadow: 0px 0px 25px -5px rgba(0 0 0 / 0.5);
+@media (min-width: 768px) {
+  .hamburger-option {
+    padding: 2rem;
+  }
 }
 
-/* Scrollbar Styling */
+/* ============================================================================
+   SCROLLBAR STYLING - Base (All Screens)
+   ============================================================================ */
 
-/* Hide default scrollbar for WebKit browsers */
 body::-webkit-scrollbar {
   display: none;
 }
 
-/* Custom scrollbar for other browsers */
-
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 8px;
   height: 5px;
 }
 
-/* Track Style */
-
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
+  background: #f1f1f1;
   border-radius: 10px;
 }
-
-/* Handle Style */
 
 ::-webkit-scrollbar-thumb {
-  background: gray;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   border-radius: 10px;
+  transition: background 0.3s ease;
 }
 
-/* Whatsapp */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+/* ============================================================================
+   WHATSAPP PULSE ANIMATION - Base (Mobile)
+   ============================================================================ */
 
 .pulse {
-  @apply w-14 h-14 bg-green-500 rounded-full;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #22c55e;
+  border-radius: 50%;
+  position: relative;
 }
 
 .pulse::after,
 .pulse::before {
-  @apply absolute w-full h-full bg-green-500 opacity-75 rounded-full;
   content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #22c55e;
+  opacity: 0.75;
+  border-radius: 50%;
 }
 
 .pulse::before {
-  animation: pulse 2s ease-out infinite;
+  animation: whatsapp-pulse 2s ease-out infinite;
 }
 
 .pulse::after {
-  animation: pulse 2s 1s ease-out infinite;
+  animation: whatsapp-pulse 2s 1s ease-out infinite;
 }
 
-@keyframes pulse {
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
   100% {
     transform: scale(2);
     opacity: 0;
+  }
+}
+
+/* ============================================================================
+   ANIMATIONS - Base (All Screens)
+   ============================================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+/* ============================================================================
+   GRADIENT BACKGROUNDS - Base (All Screens)
+   ============================================================================ */
+
+.gradient-blue {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+/* ============================================================================
+   GALLERY SLIDER - Base (Mobile)
+   ============================================================================ */
+
+.gallery-slider .slick-dots {
+  position: static;
+  margin-top: 1rem;
+}
+
+.gallery-slider .slick-dots li button:before {
+  color: white;
+  font-size: 8px;
+  opacity: 0.5;
+}
+
+@media (min-width: 640px) {
+  .gallery-slider .slick-dots li button:before {
+    font-size: 10px;
+  }
+}
+
+.gallery-slider .slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+
+.gallery-slider .slick-prev,
+.gallery-slider .slick-next {
+  color: white;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 768px) {
+
+  .gallery-slider .slick-prev,
+  .gallery-slider .slick-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.gallery-slider .slick-prev:before,
+.gallery-slider .slick-next:before {
+  color: white;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+
+  .gallery-slider .slick-prev:before,
+  .gallery-slider .slick-next:before {
+    font-size: 30px;
+  }
+}
+
+.gallery-slider .slick-prev:hover:before,
+.gallery-slider .slick-next:hover:before {
+  opacity: 1;
+}
+
+/* ============================================================================
+   SCROLLBAR CUSTOMIZATION - Base (All Screens)
+   ============================================================================ */
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-blue-400::-webkit-scrollbar-thumb {
+  background-color: #60a5fa;
+  border-radius: 9999px;
+}
+
+.scrollbar-track-gray-200::-webkit-scrollbar-track {
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+}
+
+/* ============================================================================
+   ACCESSIBILITY - Base (All Screens)
+   ============================================================================ */
+
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================================================
+   REDUCED MOTION SUPPORT - Base (All Screens)
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

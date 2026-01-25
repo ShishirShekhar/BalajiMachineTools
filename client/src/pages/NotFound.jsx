@@ -1,24 +1,51 @@
-import React from "react";
+import { FaHome, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Section, Stack } from "../components/ui";
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center">
-      <h1 className="text-6xl font-bold text-red-500 mb-4">404</h1>
-      <p className="text-2xl mb-8">Oops! Page not found</p>
-      <p className="text-lg mb-8">
-        The page you are looking for might be in another castle. Go back{" "}
-        <Link to="/" className="text-blue-500 underline">
-          Home
-        </Link>
-        .
-      </p>
-      <img
-        src="https://i.gifer.com/7VE.gif"
-        alt="Page Not Found"
-        className="max-w-full"
-      />
-    </div>
+    <Section
+      className="u-bg-page flex min-h-screen items-center text-center"
+      padding="xl"
+      maxWidth="max-w-2xl"
+    >
+      <Stack align="center" gap="8" className="w-full">
+        <div>
+          <h1 className="animate-fadeIn u-text-primary-gradient mb-4 text-7xl font-extrabold sm:text-8xl md:text-9xl">
+            404
+          </h1>
+          <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">Page Not Found</h2>
+          <p className="mb-8 text-lg text-gray-600 md:text-xl">
+            Oops! The page you're looking for seems to have wandered off. Let's get you back on
+            track.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="https://i.gifer.com/7VE.gif"
+            alt="Page Not Found Illustration"
+            className="mx-auto max-w-xs opacity-80"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
+          <Link to="/">
+            <button className="u-btn-primary flex transform items-center gap-2 rounded-lg px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <FaHome className="text-xl" />
+              Back to Home
+            </button>
+          </Link>
+          <Link to="/products">
+            <button className="flex transform items-center gap-2 rounded-lg border-2 border-blue-500 px-8 py-4 font-semibold text-blue-600 transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white">
+              <FaSearch className="text-xl" />
+              Browse Products
+            </button>
+          </Link>
+        </div>
+      </Stack>
+    </Section>
   );
 };
 
